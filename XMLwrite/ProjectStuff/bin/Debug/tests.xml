@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataClassList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Sensors>
+    <DataClass>
+      <Data3>ads</Data3>
+      <Data2>asd</Data2>
+      <Name>sa</Name>
+    </DataClass>
+    <DataClass>
+      <Data3>ads</Data3>
+      <Data2>asd</Data2>
+      <Name>sa</Name>
+    </DataClass>
+    <DataClass>
+      <Data3>sadas</Data3>
+      <Data2>sads</Data2>
+      <Name>asda</Name>
+    </DataClass>
+  </Sensors>
+</DataClassList>

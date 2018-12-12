@@ -1,0 +1,7 @@
+C:\Users\Coolermaster\source\repos\XMLwrite\SensorPoly\bin\Debug\SensorPoly.exe.config
+C:\Users\Coolermaster\source\repos\XMLwrite\SensorPoly\bin\Debug\SensorPoly.exe
+C:\Users\Coolermaster\source\repos\XMLwrite\SensorPoly\bin\Debug\SensorPoly.pdb
+C:\Users\Coolermaster\source\repos\XMLwrite\SensorPoly\obj\Debug\SensorPoly.csprojAssemblyReference.cache
+C:\Users\Coolermaster\source\repos\XMLwrite\SensorPoly\obj\Debug\SensorPoly.csproj.CoreCompileInputs.cache
+C:\Users\Coolermaster\source\repos\XMLwrite\SensorPoly\obj\Debug\SensorPoly.exe
+C:\Users\Coolermaster\source\repos\XMLwrite\SensorPoly\obj\Debug\SensorPoly.pdb

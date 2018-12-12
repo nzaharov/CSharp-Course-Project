@@ -1,0 +1,15 @@
+C:\Users\Coolermaster\source\repos\XMLwrite\ProjectStuff\bin\Debug\ProjectStuff.exe.config
+C:\Users\Coolermaster\source\repos\XMLwrite\ProjectStuff\bin\Debug\ProjectStuff.exe
+C:\Users\Coolermaster\source\repos\XMLwrite\ProjectStuff\bin\Debug\ProjectStuff.pdb
+C:\Users\Coolermaster\source\repos\XMLwrite\ProjectStuff\obj\Debug\MainWindow.g.cs
+C:\Users\Coolermaster\source\repos\XMLwrite\ProjectStuff\obj\Debug\App.g.cs
+C:\Users\Coolermaster\source\repos\XMLwrite\ProjectStuff\obj\Debug\ProjectStuff_MarkupCompile.cache
+C:\Users\Coolermaster\source\repos\XMLwrite\ProjectStuff\obj\Debug\ProjectStuff_MarkupCompile.lref
+C:\Users\Coolermaster\source\repos\XMLwrite\ProjectStuff\obj\Debug\MainWindow.baml
+C:\Users\Coolermaster\source\repos\XMLwrite\ProjectStuff\obj\Debug\ProjectStuff.g.resources
+C:\Users\Coolermaster\source\repos\XMLwrite\ProjectStuff\obj\Debug\ProjectStuff.Properties.Resources.resources
+C:\Users\Coolermaster\source\repos\XMLwrite\ProjectStuff\obj\Debug\ProjectStuff.csproj.GenerateResource.cache
+C:\Users\Coolermaster\source\repos\XMLwrite\ProjectStuff\obj\Debug\ProjectStuff.csproj.CoreCompileInputs.cache
+C:\Users\Coolermaster\source\repos\XMLwrite\ProjectStuff\obj\Debug\ProjectStuff.exe
+C:\Users\Coolermaster\source\repos\XMLwrite\ProjectStuff\obj\Debug\ProjectStuff.pdb
+C:\Users\Coolermaster\source\repos\XMLwrite\ProjectStuff\obj\Debug\ProjectStuff.csprojAssemblyReference.cache
