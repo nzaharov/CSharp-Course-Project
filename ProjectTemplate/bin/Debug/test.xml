@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Sensors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Sensors>
+    <Sensor xsi:type="HumiditySensor">
+      <Longitude>2</Longitude>
+      <Latitude>2</Latitude>
+      <Url>sa</Url>
+      <Description>a
+</Description>
+      <Name>ads</Name>
+      <MaxValue>0</MaxValue>
+      <MinValue>3</MinValue>
+    </Sensor>
+    <Sensor xsi:type="HumiditySensor">
+      <Longitude>2</Longitude>
+      <Latitude>2</Latitude>
+      <Url>sa</Url>
+      <Description>a
+</Description>
+      <Name>ads</Name>
+      <MaxValue>0</MaxValue>
+      <MinValue>3</MinValue>
+    </Sensor>
+  </Sensors>
+</Sensors>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Sensors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Sensors>
+    <Sensor xsi:type="HumiditySensor">
+      <Followed>true</Followed>
+      <Longitude>10</Longitude>
+      <Latitude>5</Latitude>
+      <Url>12312</Url>
+      <Description>1213asfag
+</Description>
+      <Name>New Humidity Sensor</Name>
+      <MaxValue>0</MaxValue>
+      <MinValue>23</MinValue>
+    </Sensor>
+    <Sensor xsi:type="TemperatureSensor">
+      <Followed>false</Followed>
+      <Longitude>25</Longitude>
+      <Latitude>20</Latitude>
+      <Url>12asdas</Url>
+      <Description>2323
+</Description>
+      <Name>Temp Sensor</Name>
+      <MaxValue>0</MaxValue>
+      <MinValue>12</MinValue>
+    </Sensor>
+    <Sensor xsi:type="HumiditySensor">
+      <Followed>false</Followed>
+      <Longitude>25</Longitude>
+      <Latitude>20</Latitude>
+      <Url>1231</Url>
+      <Description>2323
+</Description>
+      <Name>Hum Sensor</Name>
+      <MaxValue>0</MaxValue>
+      <MinValue>2</MinValue>
+    </Sensor>
+  </Sensors>
+</Sensors>
