@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace ProjectTemplate
 {
-    public class HumiditySensor:Sensor
+    public class HumiditySensor: Sensor
     {
         private decimal minValue;
         private decimal maxValue;
 
-        public HumiditySensor(string name, string url, string description, decimal latitude, decimal longitude,bool followed, decimal minValue, decimal maxValue)
+        public HumiditySensor(string name, string url, string description, double latitude, double longitude,bool followed, decimal minValue, decimal maxValue)
             : base(name, url, description, latitude, longitude,followed)
         {
             MinValue = minValue;

@@ -15,7 +15,7 @@
     
     <Canvas x:Name="canvas1" >
         
-        <Button x:Name="btnToMain" Click="BtnToMain_Click" Width="1024" Content="^" Canvas.Top="0" Background="Transparent" Foreground="White" BorderThickness="0"  Visibility="Collapsed" Panel.ZIndex="12">
+        <Button x:Name="btnToMain" Click="BtnToMain_Click" Width="1024" Content="^" Canvas.Top="0" Foreground="White" BorderThickness="0" Panel.ZIndex="12">
             <Button.Triggers>
                 <EventTrigger RoutedEvent="ButtonBase.Click">
                     <BeginStoryboard>
@@ -39,7 +39,7 @@
             <Frame x:Name="Frame2" Source="MapPage.xaml"/>
         </StackPanel>
 
-        <Button x:Name="btnToMap" Click="BtnToMap_Click" Width="1024" Content="V" Canvas.Bottom="0" Background="Transparent" Foreground="Teal" BorderThickness="0">
+        <Button x:Name="btnToMap" Click="BtnToMap_Click" Width="1024" Content="Map With All Sensors" Canvas.Bottom="0" Foreground="White" BorderThickness="0">
             <Button.Triggers>
                 <EventTrigger RoutedEvent="ButtonBase.Click">
                     <BeginStoryboard>

@@ -9,22 +9,23 @@ namespace ProjectTemplate
 {
     public class Sensor:INotifyPropertyChanged
     {
+        private const int POLLINGINTERVAL = 60;
 
         private string name;
         private string description;
         private string url;
-        private decimal latitude;
-        private decimal longitude;
+        private double latitude;
+        private double longtitude;
         private bool followed;
 
 
-        protected Sensor(string name,string url,string description,decimal latitude,decimal longitude,bool follow)
+        protected Sensor(string name,string url,string description,double latitude, double longtitude,bool follow)
         {
             Name = name;
             Url = url;
             Description = description;
             Latitude = latitude;
-            Longitude = longitude;
+            Longtitude = longtitude;
             Followed = follow;
         }
 
@@ -53,21 +54,21 @@ namespace ProjectTemplate
             }
         }
 
-        public decimal Longitude
+        public double Longtitude
         {
-            get { return longitude; }
+            get { return longtitude; }
             set
             {
-                if (longitude != value)
+                if (longtitude != value)
                 {
-                    longitude = value;
-                    NotifyPropertyChanged("Longitude");
+                    longtitude = value;
+                    NotifyPropertyChanged("Longtitude");
                 }
             }
         }
 
 
-        public decimal Latitude
+        public double Latitude
         {
             get { return latitude; }
             set

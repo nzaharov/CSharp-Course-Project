@@ -8,10 +8,10 @@ namespace ProjectTemplate
 {
     public class TemperatureSensor : Sensor
     {
-        private decimal minValue;
-        private decimal maxValue;
+        private double minValue;
+        private double maxValue;
 
-        public TemperatureSensor(string name, string url, string description, decimal latitude, decimal longitude,bool followed,decimal minValue,decimal maxValue) 
+        public TemperatureSensor(string name, string url, string description, double latitude, double longitude, bool followed, double minValue, double maxValue) 
             : base(name, url, description, latitude, longitude,followed)
         {
             MinValue = minValue;
@@ -24,7 +24,7 @@ namespace ProjectTemplate
             MaxValue = 0;
         }
 
-        public decimal MaxValue
+        public double MaxValue
         {
             get { return maxValue; }
             set
@@ -37,7 +37,7 @@ namespace ProjectTemplate
             }
         }
 
-        public decimal MinValue
+        public double MinValue
         {
             get { return minValue; }
             set

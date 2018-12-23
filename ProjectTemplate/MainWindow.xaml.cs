@@ -67,11 +67,14 @@ namespace ProjectTemplate
 
         private void BtnToMap_Click(object sender, RoutedEventArgs e)
         {
-            //Frame frame = new Frame
-            //{
-            //    Source = new Uri("MapPage.xaml", UriKind.RelativeOrAbsolute)
-            //};
-            //stkPanel1.Children.Add(frame);
+            Frame frame = new Frame
+            {
+                Source = new Uri("MapPage.xaml", UriKind.RelativeOrAbsolute)
+            };
+            stkPanel1.Children.Add(frame);
+
+            MapPage mapPage = new MapPage();
+            
 
             btnToMap.Visibility = Visibility.Collapsed;
             btnToMain.Visibility = Visibility.Visible;

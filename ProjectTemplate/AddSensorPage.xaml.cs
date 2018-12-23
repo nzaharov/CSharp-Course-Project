@@ -95,19 +95,19 @@ namespace ProjectTemplate
                         txtName.Text,
                         txtUrl.Text,
                         new TextRange(txtDescription.Document.ContentStart, txtDescription.Document.ContentEnd).Text,
-                        Convert.ToDecimal(txtLatitude.Text),
-                        Convert.ToDecimal(txtLongitude.Text),
+                        Convert.ToDouble(txtLatitude.Text),
+                        Convert.ToDouble(txtLongitude.Text),
                         isFollowed,
-                        Convert.ToDecimal(txtMinValue.Text),
-                        Convert.ToDecimal(txtMaxValue.Text));
+                        Convert.ToDouble(txtMinValue.Text),
+                        Convert.ToDouble(txtMaxValue.Text));
                     break;
                 case 1:
                     sensor = new HumiditySensor(
                         txtName.Text,
                         txtUrl.Text,
                         new TextRange(txtDescription.Document.ContentStart, txtDescription.Document.ContentEnd).Text,
-                        Convert.ToDecimal(txtLatitude.Text),
-                        Convert.ToDecimal(txtLongitude.Text),
+                        Convert.ToDouble(txtLatitude.Text),
+                        Convert.ToDouble(txtLongitude.Text),
                         isFollowed,
                         Convert.ToDecimal(txtMinValue.Text),
                         Convert.ToDecimal(txtMaxValue.Text));
@@ -117,8 +117,8 @@ namespace ProjectTemplate
                         txtName.Text,
                         txtUrl.Text,
                         new TextRange(txtDescription.Document.ContentStart, txtDescription.Document.ContentEnd).Text,
-                        Convert.ToDecimal(txtLatitude.Text),
-                        Convert.ToDecimal(txtLongitude.Text),
+                        Convert.ToDouble(txtLatitude.Text),
+                        Convert.ToDouble(txtLongitude.Text),
                         isFollowed,
                         Convert.ToDecimal(txtMinValue.Text),
                         Convert.ToDecimal(txtMaxValue.Text));
@@ -128,11 +128,11 @@ namespace ProjectTemplate
                         txtName.Text,
                         txtUrl.Text,
                         new TextRange(txtDescription.Document.ContentStart, txtDescription.Document.ContentEnd).Text,
-                        Convert.ToDecimal(txtLatitude.Text),
-                        Convert.ToDecimal(txtLongitude.Text),
+                        Convert.ToDouble(txtLatitude.Text),
+                        Convert.ToDouble(txtLongitude.Text),
                         isFollowed,
-                        Convert.ToDecimal(txtMinValue.Text),
-                        Convert.ToDecimal(txtMaxValue.Text));
+                        Convert.ToDouble(txtMinValue.Text),
+                        Convert.ToDouble(txtMaxValue.Text));
                     break;
                 case 4:
                     string opened = cmbDoorWindow.SelectedIndex == 0 ? "true" : "false";
@@ -140,8 +140,8 @@ namespace ProjectTemplate
                         txtName.Text,
                         txtUrl.Text,
                         new TextRange(txtDescription.Document.ContentStart, txtDescription.Document.ContentEnd).Text,
-                        Convert.ToDecimal(txtLatitude.Text),
-                        Convert.ToDecimal(txtLongitude.Text),
+                        Convert.ToDouble(txtLatitude.Text),
+                        Convert.ToDouble(txtLongitude.Text),
                         isFollowed,
                         opened);
                     break;

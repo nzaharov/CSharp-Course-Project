@@ -10,7 +10,7 @@ namespace ProjectTemplate
     {
         private string opened;
 
-        public WindowDoorSensor(string name, string url, string description, decimal latitude, decimal longitude,bool followed,string opened) 
+        public WindowDoorSensor(string name, string url, string description, double latitude, double longitude,bool followed,string opened) 
             : base(name, url, description, latitude, longitude,followed)
         {
             Opened = opened;
