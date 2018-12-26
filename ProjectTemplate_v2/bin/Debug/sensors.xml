@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Sensors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Sensors>
+    <Sensor xsi:type="HumiditySensor">
+      <Followed>true</Followed>
+      <Longitude>12320</Longitude>
+      <Latitude>1231</Latitude>
+      <Url>sadad</Url>
+      <Description>asdadas</Description>
+      <Name>Senzor1</Name>
+      <MaxValue>35</MaxValue>
+      <MinValue>12</MinValue>
+    </Sensor>
+    <Sensor xsi:type="WindowDoorSensor">
+      <Followed>false</Followed>
+      <Longitude>12320</Longitude>
+      <Latitude>1231</Latitude>
+      <Url>asd</Url>
+      <Description>asdadas</Description>
+      <Name>Senzor2</Name>
+      <Opened>true</Opened>
+    </Sensor>
+    <Sensor xsi:type="HumiditySensor">
+      <Followed>true</Followed>
+      <Longitude>230</Longitude>
+      <Latitude>210</Latitude>
+      <Url>asda</Url>
+      <Description>12313</Description>
+      <Name>asd</Name>
+      <MaxValue>90</MaxValue>
+      <MinValue>22</MinValue>
+    </Sensor>
+    <Sensor xsi:type="HumiditySensor">
+      <Followed>true</Followed>
+      <Longitude>0</Longitude>
+      <Latitude>0</Latitude>
+      <Url>f</Url>
+      <Description>sdt</Description>
+      <Name>fgh</Name>
+      <MaxValue>30</MaxValue>
+      <MinValue>20</MinValue>
+    </Sensor>
+    <Sensor xsi:type="PowerConsumptionSensor">
+      <Followed>true</Followed>
+      <Longitude>0</Longitude>
+      <Latitude>0</Latitude>
+      <Url>sada</Url>
+      <Description>asd</Description>
+      <Name>ada</Name>
+      <MaxValue>2</MaxValue>
+      <MinValue>3</MinValue>
+    </Sensor>
+    <Sensor xsi:type="TemperatureSensor">
+      <Followed>true</Followed>
+      <Longitude>0</Longitude>
+      <Latitude>0</Latitude>
+      <Url>fds</Url>
+      <Description>12</Description>
+      <Name>sdf</Name>
+      <MaxValue>20</MaxValue>
+      <MinValue>20</MinValue>
+    </Sensor>
+    <Sensor xsi:type="HumiditySensor">
+      <Followed>true</Followed>
+      <Longitude>0</Longitude>
+      <Latitude>0</Latitude>
+      <Url>arwa</Url>
+      <Description>awea</Description>
+      <Name>awr</Name>
+      <MaxValue>23</MaxValue>
+      <MinValue>0</MinValue>
+    </Sensor>
+    <Sensor xsi:type="HumiditySensor">
+      <Followed>true</Followed>
+      <Longitude>20</Longitude>
+      <Latitude>10</Latitude>
+      <Url>t</Url>
+      <Description>231</Description>
+      <Name>r</Name>
+      <MaxValue>33</MaxValue>
+      <MinValue>20</MinValue>
+    </Sensor>
+  </Sensors>
+</Sensors>
