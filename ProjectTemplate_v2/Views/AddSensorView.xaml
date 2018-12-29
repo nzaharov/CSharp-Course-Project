@@ -6,6 +6,18 @@
              xmlns:local="clr-namespace:ProjectTemplate_v2.Views"
              mc:Ignorable="d" 
              d:DesignHeight="542" d:DesignWidth="1016">
+
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation
+              Storyboard.TargetProperty="Opacity"
+              From="0.0" To="1.0" Duration="0:0:0.5"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </UserControl.Triggers>
     <Canvas>
        <!-- <Button x:Name="btnToMain" Content="Return" Canvas.Left="30" Canvas.Bottom="30"/>-->
         <StackPanel Canvas.Left="50" Canvas.Top="30">
@@ -27,10 +39,10 @@
             <TextBlock Text="Acceptable Values"/>
             <WrapPanel Margin="40 5 0 30" Visibility="{Binding Visibility1}">
                 <TextBox Text="{Binding MinValue}" Width="120" FontSize="16" TextAlignment="Right" />
-                <Label Content="{Binding Path=Unit}" FontSize="16" Foreground="LightSlateGray" FontWeight="SemiBold"/>
+                <Label Content="{Binding Unit}" FontSize="16" Foreground="LightSlateGray" FontWeight="SemiBold"/>
                 <TextBlock Text="-" Margin="10 0 10 0" Foreground="LightSlateGray" FontWeight="SemiBold"/>
                 <TextBox Text="{Binding MaxValue}" Width="120" FontSize="16" TextAlignment="Right"/>
-                <Label Content="{Binding Path=Unit}" FontSize="16" Foreground="LightSlateGray" FontWeight="SemiBold"/>
+                <Label Content="{Binding Unit}" FontSize="16" Foreground="LightSlateGray" FontWeight="SemiBold"/>
             </WrapPanel>
             <ComboBox SelectedIndex="{Binding Opened}" Width="130" FontSize="16"  Margin="200 5 0 30" Visibility="{Binding Visibility2}">
                 <ComboBoxItem Content="Closed"/>

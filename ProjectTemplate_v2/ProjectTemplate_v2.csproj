@@ -71,9 +71,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Commands\SensorRemoveCommand.cs" />
-    <Compile Include="Commands\SensorSubmitCommand.cs" />
-    <Compile Include="Commands\TileGeneratingCommand.cs" />
     <Compile Include="Models\HumiditySensor.cs" />
     <Compile Include="Models\NoiseSensor.cs" />
     <Compile Include="Models\PowerConsumptionSensor.cs" />

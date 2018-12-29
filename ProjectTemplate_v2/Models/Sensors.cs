@@ -25,14 +25,15 @@ namespace ProjectTemplate_v2
             List = new ObservableCollection<Sensor>();
         }
 
-        public ICollectionView FollowedList
-        {
-            get
-            {
-                var source = CollectionViewSource.GetDefaultView(List);
-                source.Filter = item => ((Sensor)item).Followed;
-                return source;
-            }
-        }
+        //public ICollectionView FollowedList
+        //{
+        //    get
+        //    {
+        //        var source = CollectionViewSource.GetDefaultView(List);
+        //        source.Filter = item => ((Sensor)item).Followed;
+        //        return source;
+        //    }
+
+        //}
     }
 }

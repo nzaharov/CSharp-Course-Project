@@ -1,6 +1,7 @@
-﻿using ProjectTemplate_v2.Commands;
-using System;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
 using Telerik.Windows.Controls;
@@ -8,26 +9,31 @@ using Telerik.Windows.Controls.Gauge;
 
 namespace ProjectTemplate_v2.ViewModels
 {
-    public class MainViewModel:BaseViewModel
+    public class MainViewModel : BaseViewModel
     {
         public ICommand AutoTileCommand { get; private set; }
-        public ICollectionView FollowedList { get; set; }
+        public ObservableCollection<Sensor> FollowedList { get; set; }
 
         public MainViewModel(ref Sensors sensors)
-        {       
+        {
+            AutoTileCommand = new DelegateCommand(AutoGenerateTile);
             this.sensors = sensors;
             GetFollowedList(ref sensors);
-            AutoTileCommand = new TileGeneratingCommand(this);
-        }
-        
-        private void GetFollowedList(ref Sensors d)
-        {
-            FollowedList = d.FollowedList;
         }
 
-        public void AutoGenerateTile(AutoGeneratingTileEventArgs e)
+        private void GetFollowedList( ref Sensors sensors)
         {
-            Sensor sensor = e.Tile.Content as Sensor;
+            FollowedList = new ObservableCollection<Sensor>(sensors.List);
+            ICollectionView source = CollectionViewSource.GetDefaultView(FollowedList);
+            source.Filter = item => ((Sensor)item).Followed;
+        }
+
+        public void AutoGenerateTile(object e)
+        {
+            Sensor sensor = ((AutoGeneratingTileEventArgs)e).Tile.Content as Sensor;
+
+            ((AutoGeneratingTileEventArgs)e).Tile.Background = new SolidColorBrush(Colors.Teal);
+            ((AutoGeneratingTileEventArgs)e).Tile.TileType = TileType.Single;
 
             if (sensor is HumiditySensor)
             {
@@ -61,9 +67,7 @@ namespace ProjectTemplate_v2.ViewModels
                 RadRadialGauge rad = new RadRadialGauge();
                 rad.Items.Add(scale);
                 StyleManager.SetTheme(rad, new MaterialTheme());
-                e.Tile.Content = rad;
-                e.Tile.Background = new SolidColorBrush(Colors.Teal);
-                e.Tile.TileType = TileType.Single;
+                ((AutoGeneratingTileEventArgs)e).Tile.Content = rad;
             }
         }
     }

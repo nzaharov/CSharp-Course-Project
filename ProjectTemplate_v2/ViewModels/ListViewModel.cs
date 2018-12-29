@@ -1,15 +1,44 @@
-﻿using ProjectTemplate_v2.Commands;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Input;
+using Telerik.Windows.Controls;
 
 namespace ProjectTemplate_v2.ViewModels
 {
-    public class ListViewModel:BaseViewModel
+    public class ListViewModel : BaseViewModel
     {
         public ObservableCollection<Sensor> List { get; set; }
-        public ICommand RemoveCommand { get; set; }
+        public ICommand RemoveCommand { get; private set; }
+        public ICommand FollowCommand { get; private set; }
+
         private Sensor selected;
+        private string followButtonContent;
+
+        public ListViewModel(ref Sensors sensors)
+        {
+            this.sensors = sensors;
+            GetList(ref sensors);
+            RemoveCommand = new DelegateCommand(RemoveSensor);
+            FollowCommand = new DelegateCommand(ChangeFollow);
+        }
+
+        private void RemoveSensor(object param)
+        {
+            sensors.List
+                .Where(item => Selected == item)
+                .ToList().All(i => sensors.List.Remove(i));
+            UpdateXml(sensors);
+        }
+
+        private void ChangeFollow(object param)
+        {
+            sensors.List
+                .Where(item => Selected == item)
+                .Select(item => item.Followed = !item.Followed).ToList();
+
+            UpdateXml(sensors);
+        }
 
         public Sensor Selected
         {
@@ -24,17 +53,29 @@ namespace ProjectTemplate_v2.ViewModels
             }
         }
 
-
-        public ListViewModel(ref Sensors sensors)
+        public string FollowButtonContent
         {
-            this.sensors = sensors;
-            GetList(ref sensors);
-            RemoveCommand = new SensorRemoveCommand(this);
-        }
+            get
+            {
+                if (Selected!=null)
+                {
+                    followButtonContent = (!Selected.Followed) ? "Follow" : "Unfollow";
+                }
+                else
+                {
+                    followButtonContent = "";
+                }
+                return followButtonContent;
+            }
 
-        public void Remove()
-        {
-            MessageBox.Show(Selected.Name);
+            set
+            {
+                if (followButtonContent != value)
+                {
+                    followButtonContent = value;
+                    RaisePropertyChanged("FollowButtonContent");
+                }
+            }
         }
 
         private void GetList(ref Sensors sensors)

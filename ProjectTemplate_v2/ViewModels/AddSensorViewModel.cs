@@ -1,7 +1,7 @@
-﻿using ProjectTemplate_v2.Commands;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Input;
+using Telerik.Windows.Controls;
 
 namespace ProjectTemplate_v2.ViewModels
 {
@@ -31,10 +31,10 @@ namespace ProjectTemplate_v2.ViewModels
             Visibility1 = Visibility.Visible;
             Visibility2 = Visibility.Collapsed;
             this.sensors = sensors;
-            SubmitCommand = new SensorSubmitCommand(this);
+            SubmitCommand = new DelegateCommand(Submit); //TODO: CanExecuteCommand
         }
 
-        public void Submit()
+        private void Submit(object param)
         {
             Sensor sensor;
 
@@ -61,7 +61,6 @@ namespace ProjectTemplate_v2.ViewModels
             }
 
             sensors.List.Add(sensor);
-            sensors.FollowedList.Refresh();
             UpdateXml(sensors);
         }
 

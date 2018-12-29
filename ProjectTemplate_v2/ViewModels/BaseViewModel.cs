@@ -17,13 +17,11 @@ namespace ProjectTemplate_v2.ViewModels
 
         protected void UpdateXml(Sensors sensors)
         {
-
             XmlSerializer serializer = new XmlSerializer(typeof(Sensors));
             TextWriter writer = new StreamWriter("sensors.xml");
 
             serializer.Serialize(writer, sensors);
             writer.Close();
-
         }
     }
 }
