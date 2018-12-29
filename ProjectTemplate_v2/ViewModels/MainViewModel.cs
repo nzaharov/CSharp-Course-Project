@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -68,6 +69,7 @@ namespace ProjectTemplate_v2.ViewModels
                 rad.Items.Add(scale);
                 StyleManager.SetTheme(rad, new MaterialTheme());
                 ((AutoGeneratingTileEventArgs)e).Tile.Content = rad;
+
             }
         }
     }

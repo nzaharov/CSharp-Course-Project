@@ -56,5 +56,10 @@ namespace ProjectTemplate_v2
         {
             DataContext = new MainViewModel(ref sensors);
         }
+
+        private void BtnToMap_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new MapViewModel();
+        }
     }
 }

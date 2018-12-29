@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ProjectTemplate_v2.Views"
+             xmlns:vm="clr-namespace:ProjectTemplate_v2.ViewModels"
              xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
              mc:Ignorable="d" 
              d:DesignHeight="542" d:DesignWidth="1016">
@@ -19,6 +20,7 @@
             </BeginStoryboard>
         </EventTrigger>
     </UserControl.Triggers>
+
     <Canvas>
         <WrapPanel Canvas.Top="-40" Canvas.Right="0">
             <TextBlock Text="C# Project 2018" Foreground="Teal" VerticalAlignment="Center" FontSize="30"/>

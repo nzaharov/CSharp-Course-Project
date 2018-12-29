@@ -25,7 +25,7 @@
 
     <Canvas>
         <materialDesign:Card Width="400" Height="500" Canvas.Right="32" Canvas.Bottom="32">
-            <ListBox x:Name="lbListBox" ItemsSource="{Binding List}" SelectedItem="{Binding Selected}" Width="400"  Height="500" ScrollViewer.VerticalScrollBarVisibility="Hidden" >
+            <ListBox x:Name="lbListBox" ItemsSource="{Binding List}" SelectedItem="{Binding Selected}" ScrollViewer.VerticalScrollBarVisibility="Hidden" >
                 <ListBox.Resources>
                     <DataTemplate x:Key="ListItem">
                         <Label Content="{Binding Name}" Width="340"/>
@@ -33,7 +33,7 @@
                     <DataTemplate x:Key="SelectedItem">
                         <WrapPanel>
                             <Label x:Name="lblLabel" Content="{Binding Name}" Width="340"/>
-                            <materialDesign:PopupBox Width="40" x:Name="pp">
+                            <materialDesign:PopupBox Width="40">
                                 <StackPanel>
                                     <Button Content="View on Map"/>
                                     <Button x:Name="btnFollow"

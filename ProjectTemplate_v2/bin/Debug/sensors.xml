@@ -11,23 +11,13 @@
       <Opened>true</Opened>
     </Sensor>
     <Sensor xsi:type="WindowDoorSensor">
-      <Followed>false</Followed>
+      <Followed>true</Followed>
       <Longitude>120</Longitude>
       <Latitude>12</Latitude>
       <Url>azsda</Url>
       <Description>asea</Description>
       <Name>Senzor3</Name>
       <Opened>true</Opened>
-    </Sensor>
-    <Sensor xsi:type="HumiditySensor">
-      <Followed>false</Followed>
-      <Longitude>0</Longitude>
-      <Latitude>0</Latitude>
-      <Url>asda</Url>
-      <Description>ase</Description>
-      <Name>Senzor2</Name>
-      <MaxValue>20</MaxValue>
-      <MinValue>0</MinValue>
     </Sensor>
     <Sensor xsi:type="WindowDoorSensor">
       <Followed>false</Followed>
@@ -40,16 +30,6 @@
     </Sensor>
     <Sensor xsi:type="HumiditySensor">
       <Followed>true</Followed>
-      <Longitude>0</Longitude>
-      <Latitude>0</Latitude>
-      <Url>dfgdfg</Url>
-      <Description>ryyt</Description>
-      <Name>fdg</Name>
-      <MaxValue>30</MaxValue>
-      <MinValue>20</MinValue>
-    </Sensor>
-    <Sensor xsi:type="HumiditySensor">
-      <Followed>false</Followed>
       <Longitude>0</Longitude>
       <Latitude>0</Latitude>
       <Url>ddfgd</Url>
@@ -79,7 +59,7 @@
       <MinValue>0</MinValue>
     </Sensor>
     <Sensor xsi:type="TemperatureSensor">
-      <Followed>true</Followed>
+      <Followed>false</Followed>
       <Longitude>0</Longitude>
       <Latitude>0</Latitude>
       <Url>ase</Url>

@@ -48,6 +48,8 @@ namespace ProjectTemplate_v2.ViewModels
                 if (selected != value)
                 {
                     selected = value;
+                    if (Selected != null)
+                        FollowButtonContent = !Selected.Followed ? "Follow" : "Unfollow";
                     RaisePropertyChanged("Selected");
                 }
             }
@@ -55,19 +57,7 @@ namespace ProjectTemplate_v2.ViewModels
 
         public string FollowButtonContent
         {
-            get
-            {
-                if (Selected!=null)
-                {
-                    followButtonContent = (!Selected.Followed) ? "Follow" : "Unfollow";
-                }
-                else
-                {
-                    followButtonContent = "";
-                }
-                return followButtonContent;
-            }
-
+            get { return followButtonContent; }
             set
             {
                 if (followButtonContent != value)
