@@ -1,19 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Xml.Serialization;
+using ProjectTemplate.ViewModels;
 
 namespace ProjectTemplate
 {
@@ -28,8 +16,7 @@ namespace ProjectTemplate
         {
             InitializeComponent();
             InitializeList();
-            MainPage mainPage = new MainPage(ref btnToMap,UpdateXml,ref sensors);
-            Frame1.Navigate(mainPage);
+            DataContext = new MainViewModel(ref sensors);
         }
 
         private void InitializeList()
@@ -54,48 +41,19 @@ namespace ProjectTemplate
             fs.Close();
         }
 
-        private void UpdateXml(Sensors sensors)
+        private void BtnToSensorAdd_Click(object sender, RoutedEventArgs e)
         {
-
-            XmlSerializer serializer = new XmlSerializer(typeof(Sensors));
-            TextWriter writer = new StreamWriter("sensors.xml");
-
-            serializer.Serialize(writer, sensors);
-            writer.Close();
-
+            DataContext = new AddSensorViewModel(ref sensors);
         }
 
-        private void BtnToMap_Click(object sender, RoutedEventArgs e)
+        private void BtnToSensorList_Click(object sender, RoutedEventArgs e)
         {
-            Frame frame = new Frame
-            {
-                Source = new Uri("MapPage.xaml", UriKind.RelativeOrAbsolute)
-            };
-            stkPanel1.Children.Add(frame);
-
-            MapPage mapPage = new MapPage();
-            
-
-            btnToMap.Visibility = Visibility.Collapsed;
-            btnToMain.Visibility = Visibility.Visible;
+            DataContext = new ListViewModel(ref sensors);
         }
 
         private void BtnToMain_Click(object sender, RoutedEventArgs e)
         {
-            btnToMap.Visibility = Visibility.Visible;
-            btnToMain.Visibility = Visibility.Collapsed;
-        }
-
-        private void Canvas1_MouseWheel(object sender, MouseWheelEventArgs e)
-        {
-            if(e.Delta<0 && btnToMap.Visibility == Visibility.Visible)
-            {
-                BtnToMap_Click(sender,e);
-            }
-            else if(e.Delta>0 && btnToMain.Visibility == Visibility.Visible)
-            {
-                BtnToMain_Click(sender, e);
-            }
+            DataContext = new MainViewModel(ref sensors);
         }
     }
 }

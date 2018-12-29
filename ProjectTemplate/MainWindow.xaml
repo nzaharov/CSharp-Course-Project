@@ -4,51 +4,36 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectTemplate"
+        xmlns:viewmodels="clr-namespace:ProjectTemplate.ViewModels"
+        xmlns:views="clr-namespace:ProjectTemplate.Views"
         mc:Ignorable="d"
-        Title="Project" Height="640" Width="1024"
-        MaxHeight="640" MaxWidth="1024"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         Background="{DynamicResource MaterialDesignPaper}"
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
-        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto">
-    
-    <Canvas x:Name="canvas1" >
-        
-        <Button x:Name="btnToMain" Click="BtnToMain_Click" Width="1024" Content="^" Canvas.Top="0" Foreground="White" BorderThickness="0" Panel.ZIndex="12">
-            <Button.Triggers>
-                <EventTrigger RoutedEvent="ButtonBase.Click">
-                    <BeginStoryboard>
-                        <Storyboard Storyboard.TargetName="Frame1" Storyboard.TargetProperty="Margin">
-                            <ThicknessAnimation To="0 , 0 , 0, 0" Duration="0:0:0.5"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-            </Button.Triggers>
-        </Button>
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+        Title="Project" Height="640" Width="1024">
 
-        <StackPanel x:Name="stkPanel1" Orientation="Vertical">
-            <StackPanel.Resources>
-                <Style TargetType="Frame">
-                    <Setter Property="Width" Value="{Binding ActualWidth, ElementName=Grd}"/>
-                    <Setter Property="NavigationUIVisibility" Value="Hidden"/>
-                    <Setter Property="Height" Value="640"/>
-                </Style>
-            </StackPanel.Resources>
-            <Frame x:Name="Frame1"/>
-            <Frame x:Name="Frame2" Source="MapPage.xaml"/>
+    <Window.Resources>
+        <DataTemplate x:Name="mainViewTemplate" DataType="{x:Type viewmodels:MainViewModel}">
+            <views:MainView DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="addSensorViewTemplate" DataType="{x:Type viewmodels:AddSensorViewModel}">
+            <views:AddSensorView DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="listViewTemplate" DataType="{x:Type viewmodels:ListViewModel}">
+            <views:ListView DataContext="{Binding}"/>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Canvas>
+        <StackPanel Orientation="Horizontal"  Canvas.Top="30" Canvas.Left="30">
+            <Button x:Name="btnToMain" Click="BtnToMain_Click" Content="Dashboard"/>
+            <Button x:Name="btnToSensorAdd" Click="BtnToSensorAdd_Click" Content="Add Sensor"/>
+            <Button x:Name="btnToSensorList" Click="BtnToSensorList_Click" Content="Sensor List"/>
         </StackPanel>
 
-        <Button x:Name="btnToMap" Click="BtnToMap_Click" Width="1024" Content="Map With All Sensors" Canvas.Bottom="0" Foreground="White" BorderThickness="0">
-            <Button.Triggers>
-                <EventTrigger RoutedEvent="ButtonBase.Click">
-                    <BeginStoryboard>
-                        <Storyboard Storyboard.TargetName="Frame1" Storyboard.TargetProperty="Margin">
-                            <ThicknessAnimation To="0 , -2000 , 0, 0" Duration="0:0:0.7"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-            </Button.Triggers>
-        </Button>
+        <ContentControl Width="1016" Height="542" Canvas.Top="67" Content="{Binding}"/>
+
     </Canvas>
 </Window>
