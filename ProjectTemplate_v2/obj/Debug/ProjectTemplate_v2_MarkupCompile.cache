@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\Lenovo\source\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\
+D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\
 ProjectTemplate_v2
 none
 false
 DEBUG;TRACE
-C:\Users\Lenovo\source\CSharp-Course-Project\ProjectTemplate_v2\App.xaml
+D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\App.xaml
 5-1697494632
 
 21929153954
-211498338761
+21-669063645
 MainWindow.xaml;Views\AddSensorView.xaml;Views\ListView.xaml;Views\MainView.xaml;Views\MapView.xaml;
 
 False
