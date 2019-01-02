@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ProjectTemplate_v2.Views"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="542" d:DesignWidth="1016">
 
@@ -73,5 +74,6 @@
         
         <Button Command="{Binding SubmitCommand}" Content="Submit" Canvas.Bottom="80" Canvas.Right="70" FontSize="19"/>
 
+        <materialDesign:Snackbar MessageQueue="{Binding SensorAdded}" Canvas.Bottom="5" Canvas.Left="400"/>
     </Canvas>
 </UserControl>

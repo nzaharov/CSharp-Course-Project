@@ -92,16 +92,6 @@
       <Followed>false</Followed>
       <Longitude>0</Longitude>
       <Latitude>0</Latitude>
-      <Url>j</Url>
-      <Description>yi</Description>
-      <Name>j</Name>
-      <MaxValue>0</MaxValue>
-      <MinValue>0</MinValue>
-    </Sensor>
-    <Sensor xsi:type="HumiditySensor">
-      <Followed>false</Followed>
-      <Longitude>0</Longitude>
-      <Latitude>0</Latitude>
       <Url>asd</Url>
       <Description>ase</Description>
       <Name>New Senzor</Name>
@@ -117,6 +107,36 @@
       <Name>Seazs</Name>
       <MaxValue>12</MaxValue>
       <MinValue>3</MinValue>
+    </Sensor>
+    <Sensor xsi:type="HumiditySensor">
+      <Followed>true</Followed>
+      <Longitude>0</Longitude>
+      <Latitude>0</Latitude>
+      <Url>qwe</Url>
+      <Description>asdad</Description>
+      <Name>wrw</Name>
+      <MaxValue>53</MaxValue>
+      <MinValue>2</MinValue>
+    </Sensor>
+    <Sensor xsi:type="HumiditySensor">
+      <Followed>true</Followed>
+      <Longitude>0</Longitude>
+      <Latitude>0</Latitude>
+      <Url>ewr</Url>
+      <Description>asdada</Description>
+      <Name>er</Name>
+      <MaxValue>30</MaxValue>
+      <MinValue>20</MinValue>
+    </Sensor>
+    <Sensor xsi:type="TemperatureSensor">
+      <Followed>true</Followed>
+      <Longitude>0</Longitude>
+      <Latitude>0</Latitude>
+      <Url>dsa</Url>
+      <Description>asdad</Description>
+      <Name>asd</Name>
+      <MaxValue>20</MaxValue>
+      <MinValue>0</MinValue>
     </Sensor>
   </Sensors>
 </Sensors>
