@@ -66,7 +66,11 @@
         </StackPanel>
 
         <CheckBox Content="Track Sensor" IsChecked="{Binding Tracking}" Canvas.Bottom="80" Canvas.Right="330" FontSize="20"/>
-
+        <!--<WrapPanel Canvas.Bottom="80" Canvas.Right="330">
+            <CheckBox IsChecked="{Binding Tracking}" Style="{StaticResource MaterialDesignSwitchToggleButton}" />
+            <TextBlock FontSize="20">Tracking</TextBlock>
+        </WrapPanel>-->
+        
         <Button Command="{Binding SubmitCommand}" Content="Submit" Canvas.Bottom="80" Canvas.Right="70" FontSize="19"/>
 
     </Canvas>

@@ -42,24 +42,48 @@ namespace ProjectTemplate_v2
             fs.Close();
         }
 
-        private void BtnToSensorAdd_Click(object sender, RoutedEventArgs e)
-        {
-            DataContext = new AddSensorViewModel(ref sensors);
-        }
+        //private void BtnToSensorAdd_Click(object sender, RoutedEventArgs e)
+        //{
+        //    DataContext = new AddSensorViewModel(ref sensors);
+        //}
 
-        private void BtnToSensorList_Click(object sender, RoutedEventArgs e)
-        {
-            DataContext = new ListViewModel(ref sensors);
-        }
+        //private void BtnToSensorList_Click(object sender, RoutedEventArgs e)
+        //{
+        //    DataContext = new ListViewModel(ref sensors);
+        //}
 
-        private void BtnToMain_Click(object sender, RoutedEventArgs e)
+        //private void BtnToMain_Click(object sender, RoutedEventArgs e)
+        //{
+        //    DataContext = new MainViewModel(ref sensors);
+        //}
+
+        //private void BtnToMap_Click(object sender, RoutedEventArgs e)
+        //{
+        //    DataContext = new MapViewModel();
+        //}
+
+        private void BtnToMain_PreviewMouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             DataContext = new MainViewModel(ref sensors);
+            MenuToggleButton.IsChecked = false;
         }
 
-        private void BtnToMap_Click(object sender, RoutedEventArgs e)
+        private void BtnToSensorList_PreviewMouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            DataContext = new ListViewModel(ref sensors);
+            MenuToggleButton.IsChecked = false;
+        }
+
+        private void BtnToSensorAdd_PreviewMouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            DataContext = new AddSensorViewModel(ref sensors);
+            MenuToggleButton.IsChecked = false;
+        }
+
+        private void BtnToMap_PreviewMouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             DataContext = new MapViewModel();
+            MenuToggleButton.IsChecked = false;
         }
     }
 }

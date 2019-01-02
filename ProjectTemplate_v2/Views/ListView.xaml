@@ -24,7 +24,7 @@
     </UserControl.Triggers>
 
     <Canvas>
-        <materialDesign:Card Width="700" Height="500" Canvas.Right="32" Canvas.Bottom="32">
+        <materialDesign:Card Width="700" Height="500" Canvas.Right="32" Canvas.Bottom="26">
             <ListBox x:Name="lbListBox" ItemsSource="{Binding List}" SelectedItem="{Binding Selected}" ScrollViewer.VerticalScrollBarVisibility="Hidden" >
                 <ListBox.Resources>
                     <DataTemplate x:Key="ListItem">
@@ -48,14 +48,14 @@
                                         Content="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type UserControl}},Path=DataContext.FollowButtonContent}">
                                             <telerik:EventToCommandBehavior.EventBindings>
                                                 <telerik:EventBinding EventName="Click"
-                                      Command="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type UserControl}},Path=DataContext.FollowCommand}"/>
+                                        Command="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type UserControl}},Path=DataContext.FollowCommand}"/>
                                             </telerik:EventToCommandBehavior.EventBindings>
                                         </Button>
                                         <Button Content="Edit"/>
                                         <Button x:Name="btnRemove" Content="Remove">
                                             <telerik:EventToCommandBehavior.EventBindings>
                                                 <telerik:EventBinding EventName="Click"
-                                      Command="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type UserControl}},Path=DataContext.RemoveCommand}"/>
+                                        Command="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type UserControl}},Path=DataContext.RemoveCommand}"/>
                                             </telerik:EventToCommandBehavior.EventBindings>
                                         </Button>
                                     </StackPanel>

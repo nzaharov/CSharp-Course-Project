@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:ProjectTemplate_v2"
         xmlns:viewmodels="clr-namespace:ProjectTemplate_v2.ViewModels"
         xmlns:views="clr-namespace:ProjectTemplate_v2.Views"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         Background="{DynamicResource MaterialDesignPaper}"
@@ -29,16 +30,54 @@
             <views:MapView DataContext="{Binding}"/>
         </DataTemplate>
     </Window.Resources>
+    
+    <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=MenuToggleButton,Path=IsChecked}">
+        <materialDesign:DrawerHost.LeftDrawerContent>
+            <DockPanel MinWidth="200">
+                <ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}"
+                                  DockPanel.Dock="Top"
+                                  HorizontalAlignment="Right"
+                                  Margin="16"
+                                  IsChecked="{Binding ElementName=MenuToggleButton, Path=IsChecked,Mode=TwoWay}"/>
 
-    <Canvas>
-        <StackPanel Orientation="Horizontal"  Canvas.Top="30" Canvas.Left="30">
-            <Button x:Name="btnToMain" Click="BtnToMain_Click" Content="Dashboard"/>
-            <Button x:Name="btnToSensorList" Click="BtnToSensorList_Click" Content="Sensor List"/>
-            <Button x:Name="btnToSensorAdd" Click="BtnToSensorAdd_Click" Content="Add Sensor"/>
-            <Button x:Name="btnToMap" Click="BtnToMap_Click" Content="Sensor Map"/>
-        </StackPanel>
+                <ListBox x:Name="MenuItemsListbox" Margin="0 16 0 16" SelectedIndex="0"
+                         HorizontalContentAlignment="Center"
+                         FontWeight="Normal">
+                    <ListBoxItem x:Name="btnToMain" 
+                                 PreviewMouseLeftButtonUp="BtnToMain_PreviewMouseLeftButtonUp" 
+                                 Content="Dashboard"/>
+                    <ListBoxItem x:Name="btnToSensorList" 
+                                 PreviewMouseLeftButtonUp="BtnToSensorList_PreviewMouseLeftButtonUp" 
+                                 Content="Sensor List"/>
+                    <ListBoxItem x:Name="btnToSensorAdd" 
+                                 PreviewMouseLeftButtonUp="BtnToSensorAdd_PreviewMouseLeftButtonUp" 
+                                 Content="Add Sensor"/>
+                    <ListBoxItem x:Name="btnToMap" 
+                                 PreviewMouseLeftButtonUp="BtnToMap_PreviewMouseLeftButtonUp" 
+                                 Content="Sensor Map"/>
+                </ListBox>
+            </DockPanel>
+        </materialDesign:DrawerHost.LeftDrawerContent>
+        <Canvas>
+            <materialDesign:ColorZone Mode="PrimaryMid" Width="1016" HorizontalContentAlignment="Left">
+            <ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}" IsChecked="False"
+                      Margin="16"
+                      x:Name="MenuToggleButton"/>
+            </materialDesign:ColorZone>
+            <!--<StackPanel Orientation="Horizontal"  Canvas.Top="30" Canvas.Left="30">
+                --><!--<StackPanel.Resources>
+                <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
 
-        <ContentControl Width="1016" Height="542" Canvas.Top="67" Content="{Binding}"/>
+                </Style>
+            </StackPanel.Resources>--><!--
 
-    </Canvas>
+                <Button x:Name="btnToMain" Click="BtnToMain_Click" Content="Dashboard"/>
+                <Button x:Name="btnToSensorList" Click="BtnToSensorList_Click" Content="Sensor List"/>
+                <Button x:Name="btnToSensorAdd" Click="BtnToSensorAdd_Click" Content="Add Sensor"/>
+                <Button x:Name="btnToMap" Click="BtnToMap_Click" Content="Sensor Map"/>
+            </StackPanel>-->
+
+            <ContentControl Width="1016" Height="542" Canvas.Top="67" Content="{Binding}"/>
+        </Canvas>
+    </materialDesign:DrawerHost>
 </Window>

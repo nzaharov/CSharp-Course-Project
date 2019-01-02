@@ -20,23 +20,13 @@
       <Opened>true</Opened>
     </Sensor>
     <Sensor xsi:type="WindowDoorSensor">
-      <Followed>false</Followed>
+      <Followed>true</Followed>
       <Longitude>0</Longitude>
       <Latitude>0</Latitude>
       <Url>dad</Url>
       <Description>asd</Description>
       <Name>asd</Name>
       <Opened>true</Opened>
-    </Sensor>
-    <Sensor xsi:type="HumiditySensor">
-      <Followed>true</Followed>
-      <Longitude>0</Longitude>
-      <Latitude>0</Latitude>
-      <Url>ddfgd</Url>
-      <Description>dfhfg</Description>
-      <Name>dfgd</Name>
-      <MaxValue>20</MaxValue>
-      <MinValue>0</MinValue>
     </Sensor>
     <Sensor xsi:type="HumiditySensor">
       <Followed>false</Followed>

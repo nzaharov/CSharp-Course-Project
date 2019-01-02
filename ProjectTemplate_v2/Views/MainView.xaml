@@ -22,7 +22,7 @@
     </UserControl.Triggers>
 
     <Canvas>
-        <WrapPanel Canvas.Top="-40" Canvas.Right="0">
+        <WrapPanel Canvas.Top="-5" Canvas.Right="0">
             <TextBlock Text="C# Project 2018" Foreground="Teal" VerticalAlignment="Center" FontSize="30"/>
             <Image Height="125" Width="222" Source="/logo.png" Stretch="Fill" />
         </WrapPanel>
@@ -31,7 +31,7 @@
                              Height="410" Canvas.Left="22" Canvas.Top="90" Width="968" telerik:StyleManager.Theme="Material"
                              ScrollViewer.HorizontalScrollBarVisibility="Hidden"
                              CanUserSelect="False"
-                             Background="Gainsboro">
+                             Background="Transparent">
 
             <telerik:EventToCommandBehavior.EventBindings>
                 <telerik:EventBinding EventName="AutoGeneratingTile"
