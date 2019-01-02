@@ -1,6 +1,7 @@
-﻿using System.Collections.ObjectModel;
+﻿using MaterialDesignThemes.Wpf;
+using System.Collections.ObjectModel;
 using System.Linq;
-using System.Windows;
+using ProjectTemplate_v2.Views;
 using System.Windows.Input;
 using Telerik.Windows.Controls;
 
@@ -11,6 +12,7 @@ namespace ProjectTemplate_v2.ViewModels
         public ObservableCollection<Sensor> List { get; set; }
         public ICommand RemoveCommand { get; private set; }
         public ICommand FollowCommand { get; private set; }
+        public ICommand EditCommand { get; private set; }
 
         private Sensor selected;
         private string followButtonContent;
@@ -21,6 +23,16 @@ namespace ProjectTemplate_v2.ViewModels
             GetList(ref sensors);
             RemoveCommand = new DelegateCommand(RemoveSensor);
             FollowCommand = new DelegateCommand(ChangeFollow);
+            EditCommand = new DelegateCommand(ExecuteEditDialog);
+        }
+
+        private async void ExecuteEditDialog(object obj)
+        {
+            var view = new EditFormDialog
+            {
+                DataContext = new EditFormDialogViewModel()
+            };
+            await DialogHost.Show(view);
         }
 
         private void RemoveSensor(object param)

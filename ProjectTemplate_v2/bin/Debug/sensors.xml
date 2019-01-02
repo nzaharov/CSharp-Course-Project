@@ -138,5 +138,15 @@
       <MaxValue>20</MaxValue>
       <MinValue>0</MinValue>
     </Sensor>
+    <Sensor xsi:type="TemperatureSensor">
+      <Followed>true</Followed>
+      <Longitude>0</Longitude>
+      <Latitude>0</Latitude>
+      <Url>sdrs</Url>
+      <Description>sdfsf</Description>
+      <Name>dr</Name>
+      <MaxValue>30</MaxValue>
+      <MinValue>0</MinValue>
+    </Sensor>
   </Sensors>
 </Sensors>

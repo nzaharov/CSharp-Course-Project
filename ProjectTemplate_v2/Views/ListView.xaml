@@ -22,50 +22,68 @@
             </BeginStoryboard>
         </EventTrigger>
     </UserControl.Triggers>
+    <materialDesign:DialogHost CloseOnClickAway="True">
 
-    <Canvas>
-        <materialDesign:Card Width="700" Height="500" Canvas.Right="32" Canvas.Bottom="26">
-            <ListBox x:Name="lbListBox" ItemsSource="{Binding List}" SelectedItem="{Binding Selected}" ScrollViewer.VerticalScrollBarVisibility="Hidden" >
+        <Canvas>
+            <materialDesign:Card DataContext="{Binding Selected}" 
+                                 Canvas.Right="24" Canvas.Top="16" 
+                                 MinHeight="300" Width="300" MaxHeight="500"
+                                 Padding="10">
+                <StackPanel>
+                    <TextBlock Text="{Binding Name}" FontSize="20" Margin="0 0 0 10" TextWrapping="Wrap"/>
+                    <TextBlock Text="{Binding Description}" FontWeight="Light" TextWrapping="Wrap"/>
+                </StackPanel>
+            </materialDesign:Card>
+
+            <ListBox x:Name="lbListBox" ItemsSource="{Binding List}" SelectedItem="{Binding Selected}" ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                     Width="600" Height="500" Canvas.Left="32" Canvas.Bottom="26"
+                     FontSize="18">
+
                 <ListBox.Resources>
                     <DataTemplate x:Key="ListItem">
-                        <Expander Header="{Binding Name}" Width="640" Background="Transparent">
-                            <!--<Label x:Name="lblLabel" Content="{Binding Name}" Width="340"/>-->
-                        </Expander>
+                        <!--<Expander Header="{Binding Name}" Width="640" Background="Transparent">-->
+                        <Label x:Name="lblLabel" Content="{Binding Name}" Width="540" Foreground="#484848"/>
+                        <!--</Expander>-->
                     </DataTemplate>
                     <DataTemplate x:Key="SelectedItem">
                         <WrapPanel>
-                            <Expander Header="{Binding Name}" Width="640" Background="Transparent"  >
-                            <!--<Label x:Name="lblLabel" Content="{Binding Name}" Width="340"/>-->
-                                <StackPanel>
+                            <!--<Expander Header="{Binding Name}" Width="640" Background="Transparent"  >-->
+                            <Label x:Name="lblLabel" Content="{Binding Name}" Width="540" Foreground="#212121"/>
+                            <!--<StackPanel>
                                     <TextBlock Text="{Binding Url,StringFormat=Current value: {0}}" Margin="0 0 0 10"/>
                                     <TextBlock Text="{Binding Description}" TextWrapping="Wrap"/>
                                 </StackPanel>
-                            </Expander>
+                            </Expander>-->
                             <materialDesign:PopupBox Width="40">
-                                    <StackPanel>
-                                        <Button Content="View on Map"/>
-                                        <Button x:Name="btnFollow"
+                                <StackPanel>
+                                    <Button Content="View on Map"/>
+                                    <Button x:Name="btnFollow"
                                         Content="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type UserControl}},Path=DataContext.FollowButtonContent}">
-                                            <telerik:EventToCommandBehavior.EventBindings>
-                                                <telerik:EventBinding EventName="Click"
+                                        <telerik:EventToCommandBehavior.EventBindings>
+                                            <telerik:EventBinding EventName="Click"
                                         Command="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type UserControl}},Path=DataContext.FollowCommand}"/>
-                                            </telerik:EventToCommandBehavior.EventBindings>
-                                        </Button>
-                                        <Button Content="Edit"/>
-                                        <Button x:Name="btnRemove" Content="Remove">
-                                            <telerik:EventToCommandBehavior.EventBindings>
-                                                <telerik:EventBinding EventName="Click"
+                                        </telerik:EventToCommandBehavior.EventBindings>
+                                    </Button>
+                                    <Button Content="Edit">
+                                        <telerik:EventToCommandBehavior.EventBindings>
+                                            <telerik:EventBinding EventName="Click"
+                                        Command="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type UserControl}},Path=DataContext.EditCommand}"/>
+                                        </telerik:EventToCommandBehavior.EventBindings>
+                                    </Button>
+                                    <Button x:Name="btnRemove" Content="Remove">
+                                        <telerik:EventToCommandBehavior.EventBindings>
+                                            <telerik:EventBinding EventName="Click"
                                         Command="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type UserControl}},Path=DataContext.RemoveCommand}"/>
-                                            </telerik:EventToCommandBehavior.EventBindings>
-                                        </Button>
-                                    </StackPanel>
-                                </materialDesign:PopupBox>
+                                        </telerik:EventToCommandBehavior.EventBindings>
+                                    </Button>
+                                </StackPanel>
+                            </materialDesign:PopupBox>
                         </WrapPanel>
                     </DataTemplate>
 
                     <Style TargetType="{x:Type ListBoxItem}"
                        BasedOn="{StaticResource {x:Type ListBoxItem}}">
-                        <EventSetter Event="PreviewMouseDown"  Handler="ListBoxItem_PreviewMouseDown"/>
+                        <EventSetter Event="PreviewMouseDown" Handler="ListBoxItem_PreviewMouseDown"/>
                         <Setter Property="ContentTemplate" Value="{StaticResource ListItem}"/>
                         <Style.Triggers>
                             <Trigger Property="ListBoxItem.IsMouseOver" Value="True">
@@ -75,6 +93,6 @@
                     </Style>
                 </ListBox.Resources>
             </ListBox>
-        </materialDesign:Card>
-    </Canvas>
+        </Canvas>
+    </materialDesign:DialogHost>
 </UserControl>

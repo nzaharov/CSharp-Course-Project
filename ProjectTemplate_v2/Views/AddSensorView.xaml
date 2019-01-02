@@ -74,6 +74,6 @@
         
         <Button Command="{Binding SubmitCommand}" Content="Submit" Canvas.Bottom="80" Canvas.Right="70" FontSize="19"/>
 
-        <materialDesign:Snackbar MessageQueue="{Binding SensorAdded}" Canvas.Bottom="5" Canvas.Left="400"/>
+        <materialDesign:Snackbar MessageQueue="{Binding SensorAdded}" Canvas.Bottom="10" Canvas.Left="400"/>
     </Canvas>
 </UserControl>

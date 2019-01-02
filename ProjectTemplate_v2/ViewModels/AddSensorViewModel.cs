@@ -15,7 +15,8 @@ namespace ProjectTemplate_v2.ViewModels
         private Visibility visibility1;
         private Visibility visibility2;
 
-        public ObservableCollection<string> Types { get; private set; }
+        public ObservableCollection<string> Types { get; private set; } = 
+            new ObservableCollection<string>() { "Temperature", "Humidity", "Electricity Consumption", "Noise", "Window/Door" };
         public string Name { get; set; }
         public string Url { get; set; }
         public string Description { get; set; }
@@ -29,7 +30,6 @@ namespace ProjectTemplate_v2.ViewModels
 
         public AddSensorViewModel(ref Sensors sensors)
         {
-            Types = new ObservableCollection<string>() { "Temperature", "Humidity", "Electricity Consumption", "Noise", "Window/Door" };
             Visibility1 = Visibility.Visible;
             Visibility2 = Visibility.Collapsed;
             this.sensors = sensors;

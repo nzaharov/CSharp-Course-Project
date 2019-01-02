@@ -129,3 +129,5 @@ D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\Project
 D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\ProjectTemplate_v2.csproj.CopyComplete
 D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\ProjectTemplate_v2.exe
 D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\ProjectTemplate_v2.pdb
+D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\Views\EditFormDialog.g.cs
+D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\Views\EditFormDialog.baml

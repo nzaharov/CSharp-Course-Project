@@ -13,7 +13,6 @@
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
         FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
-        ResizeMode="NoResize"
         Title="Project" Height="640" Width="1024">
 
     <Window.Resources>
