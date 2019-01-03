@@ -20,7 +20,6 @@
         </EventTrigger>
     </UserControl.Triggers>
     <Canvas>
-       <!-- <Button x:Name="btnToMain" Content="Return" Canvas.Left="30" Canvas.Bottom="30"/>-->
         <StackPanel Canvas.Left="50" Canvas.Top="30">
             <StackPanel.Resources>
                 <Style TargetType="TextBlock">

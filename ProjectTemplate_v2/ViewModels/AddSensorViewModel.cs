@@ -1,5 +1,5 @@
 ﻿using MaterialDesignThemes.Wpf;
-using System.Collections.ObjectModel;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Input;
 using Telerik.Windows.Controls;
@@ -15,8 +15,8 @@ namespace ProjectTemplate_v2.ViewModels
         private Visibility visibility1;
         private Visibility visibility2;
 
-        public ObservableCollection<string> Types { get; private set; } = 
-            new ObservableCollection<string>() { "Temperature", "Humidity", "Electricity Consumption", "Noise", "Window/Door" };
+        public List<string> Types { get; private set; } = 
+            new List<string>() { "Temperature", "Humidity", "Electricity Consumption", "Noise", "Window/Door" };
         public string Name { get; set; }
         public string Url { get; set; }
         public string Description { get; set; }

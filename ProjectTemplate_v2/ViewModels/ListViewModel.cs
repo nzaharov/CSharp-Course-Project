@@ -30,7 +30,7 @@ namespace ProjectTemplate_v2.ViewModels
         {
             var view = new EditFormDialog
             {
-                DataContext = new EditFormDialogViewModel()
+                DataContext = new EditFormDialogViewModel(ref sensors, Selected)
             };
             await DialogHost.Show(view);
         }

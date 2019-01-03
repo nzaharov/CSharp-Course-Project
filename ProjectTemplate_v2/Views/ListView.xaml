@@ -30,7 +30,8 @@
                                  MinHeight="300" Width="300" MaxHeight="500"
                                  Padding="10">
                 <StackPanel>
-                    <TextBlock Text="{Binding Name}" FontSize="20" Margin="0 0 0 10" TextWrapping="Wrap"/>
+                    <TextBlock Text="{Binding Name}" FontSize="20" Margin="0 0 0 5" TextWrapping="Wrap"/>
+                    <Separator Style="{StaticResource MaterialDesignDarkSeparator}" />
                     <TextBlock Text="{Binding Description}" FontWeight="Light" TextWrapping="Wrap"/>
                 </StackPanel>
             </materialDesign:Card>
@@ -41,19 +42,12 @@
 
                 <ListBox.Resources>
                     <DataTemplate x:Key="ListItem">
-                        <!--<Expander Header="{Binding Name}" Width="640" Background="Transparent">-->
                         <Label x:Name="lblLabel" Content="{Binding Name}" Width="540" Foreground="#484848"/>
-                        <!--</Expander>-->
                     </DataTemplate>
                     <DataTemplate x:Key="SelectedItem">
                         <WrapPanel>
-                            <!--<Expander Header="{Binding Name}" Width="640" Background="Transparent"  >-->
                             <Label x:Name="lblLabel" Content="{Binding Name}" Width="540" Foreground="#212121"/>
-                            <!--<StackPanel>
-                                    <TextBlock Text="{Binding Url,StringFormat=Current value: {0}}" Margin="0 0 0 10"/>
-                                    <TextBlock Text="{Binding Description}" TextWrapping="Wrap"/>
-                                </StackPanel>
-                            </Expander>-->
+                            
                             <materialDesign:PopupBox Width="40">
                                 <StackPanel>
                                     <Button Content="View on Map"/>

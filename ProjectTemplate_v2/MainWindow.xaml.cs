@@ -11,7 +11,7 @@ namespace ProjectTemplate_v2
     /// </summary>
     public partial class MainWindow : Window
     {
-        private static Sensors sensors;
+        private Sensors sensors;
 
         public MainWindow()
         {
@@ -41,26 +41,6 @@ namespace ProjectTemplate_v2
             sensors = (Sensors)serializer.Deserialize(fs);
             fs.Close();
         }
-
-        //private void BtnToSensorAdd_Click(object sender, RoutedEventArgs e)
-        //{
-        //    DataContext = new AddSensorViewModel(ref sensors);
-        //}
-
-        //private void BtnToSensorList_Click(object sender, RoutedEventArgs e)
-        //{
-        //    DataContext = new ListViewModel(ref sensors);
-        //}
-
-        //private void BtnToMain_Click(object sender, RoutedEventArgs e)
-        //{
-        //    DataContext = new MainViewModel(ref sensors);
-        //}
-
-        //private void BtnToMap_Click(object sender, RoutedEventArgs e)
-        //{
-        //    DataContext = new MapViewModel();
-        //}
 
         private void BtnToMain_PreviewMouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {

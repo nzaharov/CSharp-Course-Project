@@ -17,9 +17,9 @@ namespace ProjectTemplate_v2.ViewModels
 
         public MainViewModel(ref Sensors sensors)
         {
-            AutoTileCommand = new DelegateCommand(AutoGenerateTile);
             this.sensors = sensors;
             GetFollowedList(ref sensors);
+            AutoTileCommand = new DelegateCommand(AutoGenerateTile);
         }
 
         private void GetFollowedList( ref Sensors sensors)
