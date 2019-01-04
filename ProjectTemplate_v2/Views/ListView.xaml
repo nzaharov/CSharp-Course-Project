@@ -32,7 +32,7 @@
                 <StackPanel>
                     <TextBlock Text="{Binding Name}" FontSize="20" Margin="0 0 0 5" TextWrapping="Wrap"/>
                     <Separator Style="{StaticResource MaterialDesignDarkSeparator}" />
-                    <TextBlock Text="{Binding Description}" FontWeight="Light" TextWrapping="Wrap"/>
+                    <TextBlock Text="{Binding Description}" FontWeight="Light" TextWrapping="Wrap" />
                 </StackPanel>
             </materialDesign:Card>
 

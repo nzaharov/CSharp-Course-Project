@@ -25,7 +25,7 @@
       <Latitude>0</Latitude>
       <Url>dad</Url>
       <Description>asd</Description>
-      <Name>asd</Name>
+      <Name>Sensora</Name>
       <Opened>true</Opened>
     </Sensor>
     <Sensor xsi:type="HumiditySensor">
@@ -33,7 +33,7 @@
       <Longitude>0</Longitude>
       <Latitude>0</Latitude>
       <Url>asd</Url>
-      <Description>asd</Description>
+      <Description>asdadadaasd</Description>
       <Name>rghe</Name>
       <MaxValue>20</MaxValue>
       <MinValue>0</MinValue>
@@ -103,10 +103,10 @@
       <Longitude>32</Longitude>
       <Latitude>2</Latitude>
       <Url>asda</Url>
-      <Description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum rutrum enim ac pellentesque. Nunc imperdiet odio non quam elementum, et iaculis nibh rutrum. Vivamus sodales est in urna aliquet convallis vitae a massa. Fusce vehicula nunc sapien. Curabitur non tempus velit, id fringilla sapien. Donec risus diam, accumsan a ex sed, porttitor rutrum tortor. Aenean eget bibendum libero. Nunc bibendum mi eget quam rhoncus rutrum. Aliquam at odio sapien. Nam scelerisque tincidunt vestibulum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque nec egestas massa.</Description>
-      <Name>Seazs</Name>
-      <MaxValue>12</MaxValue>
-      <MinValue>3</MinValue>
+      <Description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum rutrum enim ac pellentesque. Nunc imperdiet odio non quam elementum, et iaculis nibh rutrum. Vivamus sodales est in urna aliquet convallis vitae a massa. Fusce vehicula nunc sapien. Curabitur non tempus velit, id fringilla sapien. Donec risus diam, accumsan a ex sed, porttitor rutrum tortor. Aenean eget bibendum libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum rutrum enim ac pellentesque. Nunc imperdiet odio non quam elementum, et iaculis nibh rutrum. Vivamus sodales est in urna aliquet convallis vitae a massa. Fusce vehicula nunc sapien. Curabitur non tempus velit, id fringilla sapien. Donec risus diam, accumsan a ex sed, porttitor rutrum tortor. Aenean eget bibendum libero. </Description>
+      <Name>Senzor4</Name>
+      <MaxValue>99</MaxValue>
+      <MinValue>52</MinValue>
     </Sensor>
     <Sensor xsi:type="HumiditySensor">
       <Followed>true</Followed>
@@ -147,6 +147,24 @@
       <Name>dr</Name>
       <MaxValue>30</MaxValue>
       <MinValue>0</MinValue>
+    </Sensor>
+    <Sensor xsi:type="WindowDoorSensor">
+      <Followed>true</Followed>
+      <Longitude>0</Longitude>
+      <Latitude>0</Latitude>
+      <Url>ASdad</Url>
+      <Description>asdad</Description>
+      <Name>Door1</Name>
+      <Opened>true</Opened>
+    </Sensor>
+    <Sensor xsi:type="WindowDoorSensor">
+      <Followed>true</Followed>
+      <Longitude>30</Longitude>
+      <Latitude>20</Latitude>
+      <Url>aeaaseas</Url>
+      <Description>asdasd</Description>
+      <Name>Window1</Name>
+      <Opened>false</Opened>
     </Sensor>
   </Sensors>
 </Sensors>

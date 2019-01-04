@@ -24,6 +24,12 @@ namespace ProjectTemplate_v2
             MaxValue = 0;
         }
 
+        public TemperatureSensor(TemperatureSensor sensor) : base(sensor)
+        {
+            MinValue = sensor.MinValue;
+            MaxValue = sensor.MaxValue;
+        }
+
         public decimal MaxValue
         {
             get { return maxValue; }

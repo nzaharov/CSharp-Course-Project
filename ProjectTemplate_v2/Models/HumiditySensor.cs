@@ -24,6 +24,12 @@ namespace ProjectTemplate_v2
             MaxValue = 0;
         }
 
+        public HumiditySensor(HumiditySensor humiditySensor):base(humiditySensor)
+        {
+            MinValue = humiditySensor.MinValue;
+            MaxValue = humiditySensor.MaxValue;
+        }
+
         public decimal MaxValue
         {
             get { return maxValue; }

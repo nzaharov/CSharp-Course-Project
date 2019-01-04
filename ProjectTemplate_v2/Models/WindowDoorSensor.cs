@@ -21,6 +21,11 @@ namespace ProjectTemplate_v2
             Opened = false;
         }
 
+        public WindowDoorSensor(WindowDoorSensor sensor) : base(sensor)
+        {
+            Opened = sensor.Opened;
+        }
+
         public bool Opened
         {
             get { return opened; }

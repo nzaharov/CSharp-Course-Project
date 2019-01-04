@@ -4,6 +4,7 @@ using System.Linq;
 using ProjectTemplate_v2.Views;
 using System.Windows.Input;
 using Telerik.Windows.Controls;
+using System.Windows.Data;
 
 namespace ProjectTemplate_v2.ViewModels
 {
