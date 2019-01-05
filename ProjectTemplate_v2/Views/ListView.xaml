@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="ProjectTemplate_v2.Views.ListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ProjectTemplate_v2.Views"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="542" d:DesignWidth="1016">
+
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation
+              Storyboard.TargetProperty="Opacity"
+              From="0.0" To="1.0" Duration="0:0:0.5"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </UserControl.Triggers>
+
+    <Canvas>
+        <materialDesign:Card Width="400" Height="500" Canvas.Right="32" Canvas.Bottom="32">
+            <ListBox x:Name="lbListBox" ItemsSource="{Binding List}" SelectedItem="{Binding Selected}" ScrollViewer.VerticalScrollBarVisibility="Hidden" >
+                <ListBox.Resources>
+                    <DataTemplate x:Key="ListItem">
+                        <Label Content="{Binding Name}" Width="340"/>
+                    </DataTemplate>
+                    <DataTemplate x:Key="SelectedItem">
+                        <WrapPanel>
+                            <Label x:Name="lblLabel" Content="{Binding Name}" Width="340"/>
+                            <materialDesign:PopupBox Width="40">
+                                <StackPanel>
+                                    <Button Content="View on Map"/>
+                                    <Button x:Name="btnFollow"
+                                        Content="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type UserControl}},Path=DataContext.FollowButtonContent}">
+                                        <telerik:EventToCommandBehavior.EventBindings>
+                                            <telerik:EventBinding EventName="Click"
+                                      Command="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type UserControl}},Path=DataContext.FollowCommand}"/>
+                                        </telerik:EventToCommandBehavior.EventBindings>
+                                    </Button>
+                                    <Button Content="Edit"/>
+                                    <Button x:Name="btnRemove" Content="Remove">
+                                        <telerik:EventToCommandBehavior.EventBindings>
+                                            <telerik:EventBinding EventName="Click"
+                                      Command="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type UserControl}},Path=DataContext.RemoveCommand}"/>
+                                        </telerik:EventToCommandBehavior.EventBindings>
+                                    </Button>
+                                </StackPanel>
+                            </materialDesign:PopupBox>
+                        </WrapPanel>
+                    </DataTemplate>
+
+                    <Style TargetType="{x:Type ListBoxItem}"
+                       BasedOn="{StaticResource {x:Type ListBoxItem}}">
+                        <EventSetter Event="PreviewMouseDown"  Handler="ListBoxItem_PreviewMouseDown"/>
+                        <Setter Property="ContentTemplate" Value="{StaticResource ListItem}"/>
+                        <Style.Triggers>
+                            <Trigger Property="ListBoxItem.IsMouseOver" Value="True">
+                                <Setter Property="ContentTemplate" Value="{StaticResource SelectedItem}"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ListBox.Resources>
+            </ListBox>
+        </materialDesign:Card>
+    </Canvas>
+</UserControl>

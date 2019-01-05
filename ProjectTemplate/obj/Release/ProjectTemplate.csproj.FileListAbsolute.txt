@@ -1,0 +1,8 @@
+D:\Uni\Github\CSharp-Course-Project\ProjectTemplate\obj\Release\ProjectTemplate.csprojAssemblyReference.cache
+D:\Uni\Github\CSharp-Course-Project\ProjectTemplate\obj\Release\Views\AddSensorView.g.cs
+D:\Uni\Github\CSharp-Course-Project\ProjectTemplate\obj\Release\MainWindow.g.cs
+D:\Uni\Github\CSharp-Course-Project\ProjectTemplate\obj\Release\Views\MapView.g.cs
+D:\Uni\Github\CSharp-Course-Project\ProjectTemplate\obj\Release\App.g.cs
+D:\Uni\Github\CSharp-Course-Project\ProjectTemplate\obj\Release\GeneratedInternalTypeHelper.g.cs
+D:\Uni\Github\CSharp-Course-Project\ProjectTemplate\obj\Release\ProjectTemplate_MarkupCompile.cache
+D:\Uni\Github\CSharp-Course-Project\ProjectTemplate\obj\Release\ProjectTemplate_MarkupCompile.lref

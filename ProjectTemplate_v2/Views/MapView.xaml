@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="ProjectTemplate_v2.Views.MapView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Maps="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
+             xmlns:local="clr-namespace:ProjectTemplate_v2.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="542" d:DesignWidth="1016">
+
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation
+              Storyboard.TargetProperty="Opacity"
+              From="0.0" To="1.0" Duration="0:0:0.5"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </UserControl.Triggers>
+
+    <Maps:Map 
+              CredentialsProvider="Arlj7m-YopkSpqjw8gdI2PHqnd8tulYdY91G_h8qZ42jmUOPjjqFRnO7iMpk9TuS" 
+              ZoomLevel="12" 
+              Center="42,25"
+              Margin="10,10,300,10"
+              Mode="AerialWithLabels"
+              BorderThickness="15"
+              BorderBrush="Black">
+        <Maps:MapItemsControl ItemsSource="{Binding Locations}">
+            <Maps:MapItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Maps:Pushpin Location="{Binding Location}" Content="{Binding Name}">
+                    </Maps:Pushpin>
+                    <!--Implement Infobox logic-->
+                </DataTemplate>
+            </Maps:MapItemsControl.ItemTemplate>
+        </Maps:MapItemsControl>
+    </Maps:Map>
+</UserControl>
+
+
+<!--<m:Map DataContext="{Binding MapWithSensors}" 
+               CredentialsProvider="Arlj7m-YopkSpqjw8gdI2PHqnd8tulYdY91G_h8qZ42jmUOPjjqFRnO7iMpk9TuS" 
+               ZoomLevel="16" 
+               Center="{Binding Center}"
+               Mode="AerialWithLabels"
+               Margin="10,80,300,30"
+               BorderThickness="10"
+               BorderBrush="Black">
+    </m:Map>-->
+<!--<m:Map DataContext="{Binding MapWithSensors}"
+           ZoomLevel="8" 
+           Mode="AerialWithLabels" 
+           CredentialsProvider="Arlj7m-YopkSpqjw8gdI2PHqnd8tulYdY91G_h8qZ42jmUOPjjqFRnO7iMpk9TuS" 
+           Center="{Binding DevPosition}"
+           Margin="10,80,300,30"
+           BorderThickness="10"
+           BorderBrush="Black">
+        <m:Pushpin.Map
+    </m:Map>-->

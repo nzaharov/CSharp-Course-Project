@@ -1,4 +1,4 @@
-﻿<Page x:Class="ProjectTemplate.Views.MapView"
+﻿    <Page x:Class="ProjectTemplate.Views.MapView"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -43,6 +43,10 @@
             </m:Map>
 
             <!--Everything outside the map-->
-        <TextBox x:Name="CurrentPosition" HorizontalAlignment="Center" Height="25" Margin="90,493,396,0" Text="Coords" IsReadOnly="True" Background="LightGray" VerticalAlignment="Top" Width="450"/>
+        <Canvas>
+            <StackPanel>
+                <TextBox x:Name="CurrentPosition" HorizontalAlignment="Center" Height="25" Margin="90,493,396,0" Text="Coords" IsReadOnly="True" Background="LightGray" VerticalAlignment="Top" Width="450"/>
+            </StackPanel>
+        </Canvas>
     </Grid>
 </Page>

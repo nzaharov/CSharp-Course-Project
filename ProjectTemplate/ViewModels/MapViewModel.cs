@@ -7,11 +7,10 @@ using System.Threading.Tasks;
 
 namespace ProjectTemplate.ViewModels
 {
-    class MapViewModel : BaseViewModel
+    public class MapViewModel : BaseViewModel
     {
-        public string Title { get; set; }
-
-        public string Description { get; set; }
+        private string title;
+        private string description;
 
         public MapViewModel()
         {
@@ -104,3 +103,4 @@ namespace ProjectTemplate.ViewModels
             Infobox.Visibility = Visibility.Collapsed;
         }
     }
+}

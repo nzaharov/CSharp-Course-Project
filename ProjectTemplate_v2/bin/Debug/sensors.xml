@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Sensors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Sensors>
+    <Sensor xsi:type="HumiditySensor">
+      <Followed>true</Followed>
+      <Longitude>0</Longitude>
+      <Latitude>0</Latitude>
+      <Url>ddfgd</Url>
+      <Description>dfhfg</Description>
+      <Name>dfgd</Name>
+      <MaxValue>20</MaxValue>
+      <MinValue>0</MinValue>
+    </Sensor>
+    <Sensor xsi:type="HumiditySensor">
+      <Followed>true</Followed>
+      <Longitude>25</Longitude>
+      <Latitude>42</Latitude>
+      <Url>www.www.com</Url>
+      <Description>Test</Description>
+      <Name>Alabala</Name>
+      <MaxValue>90</MaxValue>
+      <MinValue>20</MinValue>
+    </Sensor>
+  </Sensors>
+</Sensors>
