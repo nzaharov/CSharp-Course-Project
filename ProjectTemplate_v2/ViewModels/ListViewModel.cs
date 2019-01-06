@@ -17,7 +17,8 @@ namespace ProjectTemplate_v2.ViewModels
 
         private Sensor selected;
         private string followButtonContent;
-        private PackIcon sensorIcon;
+        private PackIconKind iconKind;
+
 
         public ListViewModel(ref Sensors sensors)
         {
@@ -26,12 +27,6 @@ namespace ProjectTemplate_v2.ViewModels
             RemoveCommand = new DelegateCommand(RemoveSensor);
             FollowCommand = new DelegateCommand(ChangeFollow);
             EditCommand = new DelegateCommand(ExecuteEditDialog);
-            SensorIcon = new PackIcon
-            {
-                Width = 25,
-                Height=25,
-                Opacity=.80
-            };
         }
 
         private async void ExecuteEditDialog(object obj)
@@ -74,15 +69,15 @@ namespace ProjectTemplate_v2.ViewModels
                         FollowButtonContent = !Selected.Followed ? "Follow" : "Unfollow";
 
                         if (selected is HumiditySensor)
-                            SensorIcon.Kind = PackIconKind.Humidity;
+                            IconKind = PackIconKind.Humidity;
                         else if (selected is NoiseSensor)
-                            SensorIcon.Kind = PackIconKind.VolumeHigh;
+                            IconKind = PackIconKind.VolumeHigh;
                         else if (selected is PowerConsumptionSensor)
-                            SensorIcon.Kind = PackIconKind.Electricity;
+                            IconKind = PackIconKind.Electricity;
                         else if (selected is TemperatureSensor)
-                            SensorIcon.Kind = PackIconKind.ThermometerLines;
+                            IconKind = PackIconKind.ThermometerLines;
                         else
-                            SensorIcon.Kind = PackIconKind.DoorOpen;
+                            IconKind = PackIconKind.DoorOpen;
                     }
 
                     RaisePropertyChanged("Selected");
@@ -91,15 +86,15 @@ namespace ProjectTemplate_v2.ViewModels
         }
 
 
-        public PackIcon SensorIcon
+        public PackIconKind IconKind
         {
-            get { return sensorIcon; }
+            get { return iconKind; }
             set
             {
-                if (sensorIcon != value)
+                if (iconKind != value)
                 {
-                    sensorIcon = value;
-                    RaisePropertyChanged("SensorIcon");
+                    iconKind = value;
+                    RaisePropertyChanged("IconKind");
                 }
             }
         }

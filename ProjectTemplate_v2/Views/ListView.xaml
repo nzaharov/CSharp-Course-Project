@@ -31,7 +31,8 @@
                                  Padding="10">
                 <StackPanel>
                     <WrapPanel Margin="0 0 0 5">
-                        <ContentControl Content="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type UserControl}},Path=DataContext.SensorIcon}"/>
+                        <materialDesign:PackIcon Kind="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type UserControl}},Path=DataContext.IconKind}"
+                                                 Width="25" Height="25" Opacity=".80"/>
                         <TextBlock Text="{Binding Name}" FontSize="20" TextWrapping="Wrap"/>
                     </WrapPanel>
                     <Separator Style="{StaticResource MaterialDesignDarkSeparator}" />
