@@ -166,5 +166,15 @@
       <Name>Window1</Name>
       <Opened>false</Opened>
     </Sensor>
+    <Sensor xsi:type="PowerConsumptionSensor">
+      <Followed>true</Followed>
+      <Longitude>25.443</Longitude>
+      <Latitude>42</Latitude>
+      <Url>adadsda</Url>
+      <Description>rawr</Description>
+      <Name>Power sensor 1</Name>
+      <MaxValue>457</MaxValue>
+      <MinValue>350</MinValue>
+    </Sensor>
   </Sensors>
 </Sensors>

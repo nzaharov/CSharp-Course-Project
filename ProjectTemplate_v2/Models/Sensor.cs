@@ -8,12 +8,12 @@ namespace ProjectTemplate_v2
         private string name;
         private string description;
         private string url;
-        private decimal latitude;
-        private decimal longitude;
+        private double latitude;
+        private double longitude;
         private bool followed;
 
 
-        protected Sensor(string name,string url,string description,decimal latitude,decimal longitude,bool follow)
+        protected Sensor(string name,string url,string description,double latitude,double longitude,bool follow)
         {
             Name = name;
             Url = url;
@@ -53,7 +53,7 @@ namespace ProjectTemplate_v2
             }
         }
 
-        public decimal Longitude
+        public double Longitude
         {
             get { return longitude; }
             set
@@ -67,7 +67,7 @@ namespace ProjectTemplate_v2
         }
 
 
-        public decimal Latitude
+        public double Latitude
         {
             get { return latitude; }
             set

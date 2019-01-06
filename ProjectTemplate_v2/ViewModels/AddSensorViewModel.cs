@@ -20,8 +20,8 @@ namespace ProjectTemplate_v2.ViewModels
         public string Name { get; set; }
         public string Url { get; set; }
         public string Description { get; set; }
-        public decimal Latitude { get; set; }
-        public decimal Longitude { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
         public decimal MinValue { get; set; }
         public decimal MaxValue { get; set; }
         public ICommand SubmitCommand { get; private set; }
