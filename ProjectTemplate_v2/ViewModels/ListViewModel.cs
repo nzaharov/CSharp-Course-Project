@@ -4,7 +4,6 @@ using System.Linq;
 using ProjectTemplate_v2.Views;
 using System.Windows.Input;
 using Telerik.Windows.Controls;
-using System.Windows.Data;
 
 namespace ProjectTemplate_v2.ViewModels
 {
@@ -65,7 +64,6 @@ namespace ProjectTemplate_v2.ViewModels
                     selected = value;
                     if (Selected != null)
                     {
-
                         FollowButtonContent = !Selected.Followed ? "Follow" : "Unfollow";
 
                         if (selected is HumiditySensor)
