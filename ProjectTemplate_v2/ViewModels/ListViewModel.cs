@@ -17,6 +17,7 @@ namespace ProjectTemplate_v2.ViewModels
 
         private Sensor selected;
         private string followButtonContent;
+        private PackIcon sensorIcon;
 
         public ListViewModel(ref Sensors sensors)
         {
@@ -25,6 +26,12 @@ namespace ProjectTemplate_v2.ViewModels
             RemoveCommand = new DelegateCommand(RemoveSensor);
             FollowCommand = new DelegateCommand(ChangeFollow);
             EditCommand = new DelegateCommand(ExecuteEditDialog);
+            SensorIcon = new PackIcon
+            {
+                Width = 25,
+                Height=25,
+                Opacity=.80
+            };
         }
 
         private async void ExecuteEditDialog(object obj)
@@ -62,8 +69,37 @@ namespace ProjectTemplate_v2.ViewModels
                 {
                     selected = value;
                     if (Selected != null)
+                    {
+
                         FollowButtonContent = !Selected.Followed ? "Follow" : "Unfollow";
+
+                        if (selected is HumiditySensor)
+                            SensorIcon.Kind = PackIconKind.Humidity;
+                        else if (selected is NoiseSensor)
+                            SensorIcon.Kind = PackIconKind.VolumeHigh;
+                        else if (selected is PowerConsumptionSensor)
+                            SensorIcon.Kind = PackIconKind.Electricity;
+                        else if (selected is TemperatureSensor)
+                            SensorIcon.Kind = PackIconKind.ThermometerLines;
+                        else
+                            SensorIcon.Kind = PackIconKind.DoorOpen;
+                    }
+
                     RaisePropertyChanged("Selected");
+                }
+            }
+        }
+
+
+        public PackIcon SensorIcon
+        {
+            get { return sensorIcon; }
+            set
+            {
+                if (sensorIcon != value)
+                {
+                    sensorIcon = value;
+                    RaisePropertyChanged("SensorIcon");
                 }
             }
         }

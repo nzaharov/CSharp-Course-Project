@@ -18,7 +18,9 @@
             </BeginStoryboard>
         </EventTrigger>
     </UserControl.Triggers>
-    <Grid>
 
+    <Grid>
+        
     </Grid>
+
 </UserControl>

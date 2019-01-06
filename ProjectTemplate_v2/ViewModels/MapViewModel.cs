@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ProjectTemplate_v2.ViewModels
 {
-    public class MapViewModel
+    public class MapViewModel:BaseViewModel
     {
+        
     }
 }

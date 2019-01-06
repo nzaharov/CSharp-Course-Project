@@ -30,7 +30,10 @@
                                  MinHeight="300" Width="300" MaxHeight="500"
                                  Padding="10">
                 <StackPanel>
-                    <TextBlock Text="{Binding Name}" FontSize="20" Margin="0 0 0 5" TextWrapping="Wrap"/>
+                    <WrapPanel Margin="0 0 0 5">
+                        <ContentControl Content="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type UserControl}},Path=DataContext.SensorIcon}"/>
+                        <TextBlock Text="{Binding Name}" FontSize="20" TextWrapping="Wrap"/>
+                    </WrapPanel>
                     <Separator Style="{StaticResource MaterialDesignDarkSeparator}" />
                     <TextBlock Text="{Binding Description}" FontWeight="Light" TextWrapping="Wrap" />
                 </StackPanel>
