@@ -21,5 +21,14 @@
       <MaxValue>90</MaxValue>
       <MinValue>20</MinValue>
     </Sensor>
+    <Sensor xsi:type="WindowDoorSensor">
+      <Followed>true</Followed>
+      <Longitude>23.319941</Longitude>
+      <Latitude>42.698334</Latitude>
+      <Url>www.www.www.com</Url>
+      <Description>jdhosnkjlnlkjnmlkdsnmlkdfds</Description>
+      <Name>Test</Name>
+      <Opened>true</Opened>
+    </Sensor>
   </Sensors>
 </Sensors>

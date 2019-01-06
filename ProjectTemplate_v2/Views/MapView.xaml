@@ -20,7 +20,7 @@
         </EventTrigger>
     </UserControl.Triggers>
 
-    <Maps:Map 
+    <!--<Maps:Map 
               CredentialsProvider="Arlj7m-YopkSpqjw8gdI2PHqnd8tulYdY91G_h8qZ42jmUOPjjqFRnO7iMpk9TuS" 
               ZoomLevel="12" 
               Center="42,25"
@@ -33,11 +33,12 @@
                 <DataTemplate>
                     <Maps:Pushpin Location="{Binding Location}" Content="{Binding Name}">
                     </Maps:Pushpin>
-                    <!--Implement Infobox logic-->
+                    --><!--Implement Infobox logic--><!--
                 </DataTemplate>
             </Maps:MapItemsControl.ItemTemplate>
         </Maps:MapItemsControl>
-    </Maps:Map>
+    </Maps:Map>-->
+    <ContentControl Content="{Binding MapWithMarkers}" Width="1016" Height="542"/>
 </UserControl>
 
 

@@ -5,6 +5,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Media;
 
 namespace ProjectTemplate_v2.ViewModels
 {
@@ -32,7 +34,7 @@ namespace ProjectTemplate_v2.ViewModels
     {
         private ObservableCollection<Pushpin> locations;
         private ObservableCollection<PushpinModel> pushpins;
-
+        public Map MapWithMarkers { get; set; }
 
         public MapViewModel(ref Sensors sensors)
         {
@@ -41,12 +43,40 @@ namespace ProjectTemplate_v2.ViewModels
             ObservableCollection<Pushpin> Locations = new ObservableCollection<Pushpin>();
             ObservableCollection<PushpinModel> Pushpins = new ObservableCollection<PushpinModel>();
 
+            InitMap();
             Map MapWithSensors = new Map();
             if (sensors.List.Count == 0)
                 MapWithSensors.Center = new Location(42.698334, 23.319941);
 
-            SetAllPushpinLocations(ref sensors, Locations, Pushpins);
+            //SetAllPushpinLocations(ref sensors, Locations, Pushpins);
             
+        }
+
+        private void InitMap()
+        {
+            MapWithMarkers = new Map
+            {
+                Center = new Location(42, 25),
+                ZoomLevel = 12,
+                Margin = new Thickness(10,10,300,10),
+                Mode = new AerialMode(true),
+                BorderThickness = new Thickness(15),
+                BorderBrush = Brushes.Black,
+                CredentialsProvider = new ApplicationIdCredentialsProvider("Arlj7m-YopkSpqjw8gdI2PHqnd8tulYdY91G_h8qZ42jmUOPjjqFRnO7iMpk9TuS")
+            };
+
+            foreach (var sensor in sensors.List)
+            {
+                Pushpin pin = new Pushpin
+                {
+                    Location = new Location(sensor.Latitude, sensor.Longitude),
+                    Name = sensor.Name,
+                    ToolTip = sensor.Description
+                };
+                Locations.Add(pin);
+
+                MapWithMarkers.Children.Add(pin);
+            }
         }
 
         public ObservableCollection<PushpinModel> Pushpins
@@ -72,30 +102,19 @@ namespace ProjectTemplate_v2.ViewModels
         }
 
 
-        private void SetAllPushpinLocations(ref Sensors sensors, ObservableCollection<Pushpin> Locations, ObservableCollection<PushpinModel> Pushpins)
-        {
-            foreach (var sensor in sensors.List)
-            {
-                Pushpin temp = new Pushpin
-                {
-                    Location = new Location(sensor.Longitude, sensor.Latitude)
-                };
-                Locations.Add(temp);
+        //private void SetAllPushpinLocations(ref Sensors sensors, ObservableCollection<Pushpin> Locations, ObservableCollection<PushpinModel> Pushpins)
+        //{
+        //    foreach (var sensor in sensors.List)
+        //    {
+        //        Pushpin temp = new Pushpin
+        //        {
+        //            Location = new Location(sensor.Longitude, sensor.Latitude)
+        //        };
+        //        Locations.Add(temp);
 
-                PushpinModel tempp = new PushpinModel(temp.Location, sensor.Name, sensor.Description);
-                Pushpins.Add(tempp);
-            }
-            //e.Handled = true;
-            //Point mousePosition = e.GetPosition((UIElement)sender);
-            //Location pinLocation = operatorMap.ViewportPointToLocation(mousePosition);
-            //if (pin == null)
-            //{
-            //    pin = new Pushpin();
-            //    operatorMap.Children.Add(pin);
-            //}
-            //pin.Location = pinLocation;
-            //this.viewModel.Evt.Latitude = pinLocation.Latitude;
-            //this.viewModel.Evt.Longitude = pinLocation.Longitude;
-        }
+        //        PushpinModel tempp = new PushpinModel(temp.Location, sensor.Name, sensor.Description);
+        //        Pushpins.Add(tempp);
+        //    }
+        //}
     }
 }
