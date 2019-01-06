@@ -19,7 +19,6 @@
             </BeginStoryboard>
         </EventTrigger>
     </UserControl.Triggers>
-    <materialDesign:DialogHost CloseOnClickAway="True">
 
         <Canvas>
             <materialDesign:Card DataContext="{Binding Selected}" 
@@ -89,5 +88,4 @@
                 </ListBox.Resources>
             </ListBox>
         </Canvas>
-    </materialDesign:DialogHost>
 </UserControl>
