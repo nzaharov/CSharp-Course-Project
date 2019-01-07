@@ -7,7 +7,7 @@ using Telerik.Windows.Controls;
 
 namespace ProjectTemplate_v2.ViewModels
 {
-    public class EditFormDialogViewModel:BaseViewModel
+    public class EditFormDialogViewModel : BaseViewModel
     {
         //public List<string> Types { get; private set; } = 
         //    new List<string>() { "Temperature", "Humidity", "Electricity Consumption", "Noise", "Window/Door" };
@@ -21,14 +21,14 @@ namespace ProjectTemplate_v2.ViewModels
 
         public Visibility DoorWindow { get; set; }
         public Visibility OtherVis { get; set; }
-        public ICommand EditCommand { get;private set; }
+        public ICommand EditCommand { get; private set; }
         public int Index { get; set; }
 
-        public EditFormDialogViewModel(ref Sensors sensors,Sensor selected)
+        public EditFormDialogViewModel(Sensors sensors, Sensor selected)
         {
             this.sensors = sensors;
             EditCommand = new DelegateCommand(SubmitEdit);
-            Index= sensors.List
+            Index = sensors.List
                     .IndexOf(sensors.List.Where(sensor => sensor == selected).FirstOrDefault());
             CreateCopy(selected, ref this.selected);
 
@@ -52,7 +52,7 @@ namespace ProjectTemplate_v2.ViewModels
             DialogHost.CloseDialogCommand.Execute(null, null);
         }
 
-        private void CreateCopy(Sensor sensor1,ref Sensor sensor2)
+        private void CreateCopy(Sensor sensor1, ref Sensor sensor2)
         {
             if (sensor1 is HumiditySensor)
                 sensor2 = new HumiditySensor((HumiditySensor)sensor1);

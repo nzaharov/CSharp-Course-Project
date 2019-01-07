@@ -19,10 +19,11 @@ namespace ProjectTemplate_v2.ViewModels
         private PackIconKind iconKind;
 
 
-        public ListViewModel(ref Sensors sensors)
+        public ListViewModel(Sensors sensors)
         {
             this.sensors = sensors;
-            GetList(ref sensors);
+            //GetList(ref sensors);
+            List = sensors.List;
             RemoveCommand = new DelegateCommand(RemoveSensor);
             FollowCommand = new DelegateCommand(ChangeFollow);
             EditCommand = new DelegateCommand(ExecuteEditDialog);
@@ -32,7 +33,7 @@ namespace ProjectTemplate_v2.ViewModels
         {
             var view = new EditFormDialog
             {
-                DataContext = new EditFormDialogViewModel(ref sensors, Selected)
+                DataContext = new EditFormDialogViewModel(sensors, Selected)
             };
             await DialogHost.Show(view);
         }
@@ -110,9 +111,9 @@ namespace ProjectTemplate_v2.ViewModels
             }
         }
 
-        private void GetList(ref Sensors sensors)
-        {
-            List = sensors.List;
-        }
+        //private void GetList(ref Sensors sensors)
+        //{
+        //    List = sensors.List;
+        //}
     }
 }

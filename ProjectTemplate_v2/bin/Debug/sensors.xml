@@ -19,15 +19,6 @@
       <Name>Senzor3</Name>
       <Opened>true</Opened>
     </Sensor>
-    <Sensor xsi:type="WindowDoorSensor">
-      <Followed>true</Followed>
-      <Longitude>0</Longitude>
-      <Latitude>0</Latitude>
-      <Url>dad</Url>
-      <Description>asd</Description>
-      <Name>Sensora</Name>
-      <Opened>true</Opened>
-    </Sensor>
     <Sensor xsi:type="HumiditySensor">
       <Followed>false</Followed>
       <Longitude>0</Longitude>
@@ -127,16 +118,6 @@
       <Name>er</Name>
       <MaxValue>30</MaxValue>
       <MinValue>20</MinValue>
-    </Sensor>
-    <Sensor xsi:type="TemperatureSensor">
-      <Followed>true</Followed>
-      <Longitude>0</Longitude>
-      <Latitude>0</Latitude>
-      <Url>dsa</Url>
-      <Description>asdad</Description>
-      <Name>asd</Name>
-      <MaxValue>20</MaxValue>
-      <MinValue>0</MinValue>
     </Sensor>
     <Sensor xsi:type="TemperatureSensor">
       <Followed>true</Followed>

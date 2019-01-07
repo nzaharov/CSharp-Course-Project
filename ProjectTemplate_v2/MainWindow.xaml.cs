@@ -17,7 +17,7 @@ namespace ProjectTemplate_v2
         {
             InitializeComponent();
             InitializeList();
-            DataContext = new MainViewModel(ref sensors);
+            DataContext = new MainViewModel(sensors);
         }
 
         private void InitializeList()
@@ -44,19 +44,19 @@ namespace ProjectTemplate_v2
 
         private void BtnToMain_PreviewMouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            DataContext = new MainViewModel(ref sensors);
+            DataContext = new MainViewModel(sensors);
             MenuToggleButton.IsChecked = false;
         }
 
         private void BtnToSensorList_PreviewMouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            DataContext = new ListViewModel(ref sensors);
+            DataContext = new ListViewModel(sensors);
             MenuToggleButton.IsChecked = false;
         }
 
         private void BtnToSensorAdd_PreviewMouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            DataContext = new AddSensorViewModel(ref sensors);
+            DataContext = new AddSensorViewModel(sensors);
             MenuToggleButton.IsChecked = false;
         }
 

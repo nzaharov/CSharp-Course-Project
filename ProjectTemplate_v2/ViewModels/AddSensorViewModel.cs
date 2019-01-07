@@ -11,11 +11,11 @@ namespace ProjectTemplate_v2.ViewModels
         private string selectedItem;
         private string unit;
         private bool opened;
-        private bool tracking=true;
+        private bool tracking = true;
         private Visibility visibility1;
         private Visibility visibility2;
 
-        public List<string> Types { get; private set; } = 
+        public List<string> Types { get; private set; } =
             new List<string>() { "Temperature", "Humidity", "Electricity Consumption", "Noise", "Window/Door" };
         public string Name { get; set; }
         public string Url { get; set; }
@@ -28,7 +28,7 @@ namespace ProjectTemplate_v2.ViewModels
         public SnackbarMessageQueue SensorAdded { get; set; }
 
 
-        public AddSensorViewModel(ref Sensors sensors)
+        public AddSensorViewModel(Sensors sensors)
         {
             Visibility1 = Visibility.Visible;
             Visibility2 = Visibility.Collapsed;
@@ -44,7 +44,7 @@ namespace ProjectTemplate_v2.ViewModels
             switch (SelectedItem)
             {
                 case "Temperature":
-                    sensor = new TemperatureSensor(Name,Url,Description,Latitude,Longitude,Tracking,MinValue,MaxValue);
+                    sensor = new TemperatureSensor(Name, Url, Description, Latitude, Longitude, Tracking, MinValue, MaxValue);
                     break;
                 case "Humidity":
                     sensor = new HumiditySensor(Name, Url, Description, Latitude, Longitude, Tracking, MinValue, MaxValue);

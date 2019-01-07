@@ -13,14 +13,14 @@ namespace ProjectTemplate_v2.ViewModels
         //public ICommand AutoTileCommand { get; private set; }
         public ObservableCollection<Sensor> FollowedList { get; set; }
 
-        public MainViewModel(ref Sensors sensors)
+        public MainViewModel(Sensors sensors)
         {
             this.sensors = sensors;
-            GetFollowedList(ref sensors);
+            GetFollowedList(sensors);
             //AutoTileCommand = new DelegateCommand(AutoGenerateTile);
         }
 
-        private void GetFollowedList( ref Sensors sensors)
+        private void GetFollowedList(Sensors sensors)
         {
             FollowedList = new ObservableCollection<Sensor>(sensors.List);
             ICollectionView source = CollectionViewSource.GetDefaultView(FollowedList);
