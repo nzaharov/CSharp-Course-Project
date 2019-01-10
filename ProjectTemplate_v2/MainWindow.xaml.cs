@@ -11,13 +11,13 @@ namespace ProjectTemplate_v2
     /// </summary>
     public partial class MainWindow : Window
     {
-        private static Sensors sensors;
+        private Sensors sensors;
 
         public MainWindow()
         {
             InitializeComponent();
             InitializeList();
-            DataContext = new MainViewModel(ref sensors);
+            DataContext = new MainViewModel(sensors);
         }
 
         private void InitializeList()
@@ -42,24 +42,28 @@ namespace ProjectTemplate_v2
             fs.Close();
         }
 
-        private void BtnToSensorAdd_Click(object sender, RoutedEventArgs e)
+        private void BtnToMain_PreviewMouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            DataContext = new AddSensorViewModel(ref sensors);
+            DataContext = new MainViewModel(sensors);
+            MenuToggleButton.IsChecked = false;
         }
 
-        private void BtnToSensorList_Click(object sender, RoutedEventArgs e)
+        private void BtnToSensorList_PreviewMouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            DataContext = new ListViewModel(ref sensors);
+            DataContext = new ListViewModel(sensors);
+            MenuToggleButton.IsChecked = false;
         }
 
-        private void BtnToMain_Click(object sender, RoutedEventArgs e)
+        private void BtnToSensorAdd_PreviewMouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            DataContext = new MainViewModel(ref sensors);
+            DataContext = new AddSensorViewModel(sensors);
+            MenuToggleButton.IsChecked = false;
         }
 
-        private void BtnToMap_Click(object sender, RoutedEventArgs e)
+        private void BtnToMap_PreviewMouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             DataContext = new MapViewModel(ref sensors);
+            MenuToggleButton.IsChecked = false;
         }
     }
 }

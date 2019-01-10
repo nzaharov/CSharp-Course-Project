@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.IO;
 using System.Xml.Serialization;
 
@@ -11,7 +9,6 @@ namespace ProjectTemplate_v2.ViewModels
         protected Sensors sensors;
 
         public event PropertyChangedEventHandler PropertyChanged;
-
         protected virtual void RaisePropertyChanged(string propName)
         {
             PropertyChanged?.Invoke(this,

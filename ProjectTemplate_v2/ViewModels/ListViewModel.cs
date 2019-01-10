@@ -1,6 +1,7 @@
-﻿using System.Collections.ObjectModel;
+﻿using MaterialDesignThemes.Wpf;
+using System.Collections.ObjectModel;
 using System.Linq;
-using System.Windows;
+using ProjectTemplate_v2.Views;
 using System.Windows.Input;
 using Telerik.Windows.Controls;
 
@@ -11,16 +12,30 @@ namespace ProjectTemplate_v2.ViewModels
         public ObservableCollection<Sensor> List { get; set; }
         public ICommand RemoveCommand { get; private set; }
         public ICommand FollowCommand { get; private set; }
+        public ICommand EditCommand { get; private set; }
 
         private Sensor selected;
         private string followButtonContent;
+        private PackIconKind iconKind;
 
-        public ListViewModel(ref Sensors sensors)
+
+        public ListViewModel(Sensors sensors)
         {
             this.sensors = sensors;
-            GetList(ref sensors);
+            //GetList(ref sensors);
+            List = sensors.List;
             RemoveCommand = new DelegateCommand(RemoveSensor);
             FollowCommand = new DelegateCommand(ChangeFollow);
+            EditCommand = new DelegateCommand(ExecuteEditDialog);
+        }
+
+        private async void ExecuteEditDialog(object obj)
+        {
+            var view = new EditFormDialog
+            {
+                DataContext = new EditFormDialogViewModel(sensors, Selected)
+            };
+            await DialogHost.Show(view);
         }
 
         private void RemoveSensor(object param)
@@ -49,8 +64,36 @@ namespace ProjectTemplate_v2.ViewModels
                 {
                     selected = value;
                     if (Selected != null)
+                    {
                         FollowButtonContent = !Selected.Followed ? "Follow" : "Unfollow";
+
+                        if (selected is HumiditySensor)
+                            IconKind = PackIconKind.Humidity;
+                        else if (selected is NoiseSensor)
+                            IconKind = PackIconKind.VolumeHigh;
+                        else if (selected is PowerConsumptionSensor)
+                            IconKind = PackIconKind.Electricity;
+                        else if (selected is TemperatureSensor)
+                            IconKind = PackIconKind.ThermometerLines;
+                        else
+                            IconKind = PackIconKind.DoorOpen;
+                    }
+
                     RaisePropertyChanged("Selected");
+                }
+            }
+        }
+
+
+        public PackIconKind IconKind
+        {
+            get { return iconKind; }
+            set
+            {
+                if (iconKind != value)
+                {
+                    iconKind = value;
+                    RaisePropertyChanged("IconKind");
                 }
             }
         }
@@ -68,9 +111,9 @@ namespace ProjectTemplate_v2.ViewModels
             }
         }
 
-        private void GetList(ref Sensors sensors)
-        {
-            List = sensors.List;
-        }
+        //private void GetList(ref Sensors sensors)
+        //{
+        //    List = sensors.List;
+        //}
     }
 }

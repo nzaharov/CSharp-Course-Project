@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ProjectTemplate_v2.Views"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="542" d:DesignWidth="1016">
 
@@ -19,7 +20,6 @@
         </EventTrigger>
     </UserControl.Triggers>
     <Canvas>
-       <!-- <Button x:Name="btnToMain" Content="Return" Canvas.Left="30" Canvas.Bottom="30"/>-->
         <StackPanel Canvas.Left="50" Canvas.Top="30">
             <StackPanel.Resources>
                 <Style TargetType="TextBlock">
@@ -66,8 +66,13 @@
         </StackPanel>
 
         <CheckBox Content="Track Sensor" IsChecked="{Binding Tracking}" Canvas.Bottom="80" Canvas.Right="330" FontSize="20"/>
-
+        <!--<WrapPanel Canvas.Bottom="80" Canvas.Right="330">
+            <CheckBox IsChecked="{Binding Tracking}" Style="{StaticResource MaterialDesignSwitchToggleButton}" />
+            <TextBlock FontSize="20">Tracking</TextBlock>
+        </WrapPanel>-->
+        
         <Button Command="{Binding SubmitCommand}" Content="Submit" Canvas.Bottom="80" Canvas.Right="70" FontSize="19"/>
 
+        <materialDesign:Snackbar MessageQueue="{Binding SensorAdded}" Canvas.Bottom="10" Canvas.Left="400"/>
     </Canvas>
 </UserControl>

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Uni\Github\CSharp-Course-Project\ProjectTemplate_v2\App.xaml
-5-1697494632
+6682571544
 
-21929153954
+23-1766965375
 221011935519
-MainWindow.xaml;Views\AddSensorView.xaml;Views\ListView.xaml;Views\MainView.xaml;Views\MapView.xaml;
+MainWindow.xaml;Views\AddSensorView.xaml;Views\EditFormDialog.xaml;Views\ListView.xaml;Views\MainView.xaml;Views\MapView.xaml;
 
 False
 

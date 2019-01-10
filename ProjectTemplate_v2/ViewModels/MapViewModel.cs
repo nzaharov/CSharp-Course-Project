@@ -30,7 +30,7 @@ namespace ProjectTemplate_v2.ViewModels
     }
 
 
-    public class MapViewModel:BaseViewModel
+    public class MapViewModel : BaseViewModel
     {
         private ObservableCollection<Pushpin> locations;
         private ObservableCollection<PushpinModel> pushpins;
@@ -49,7 +49,7 @@ namespace ProjectTemplate_v2.ViewModels
                 MapWithSensors.Center = new Location(42.698334, 23.319941);
 
             //SetAllPushpinLocations(ref sensors, Locations, Pushpins);
-            
+
         }
 
         private void InitMap()
@@ -58,7 +58,7 @@ namespace ProjectTemplate_v2.ViewModels
             {
                 Center = new Location(42, 25),
                 ZoomLevel = 12,
-                Margin = new Thickness(10,10,300,10),
+                Margin = new Thickness(10, 10, 300, 10),
                 Mode = new AerialMode(true),
                 BorderThickness = new Thickness(15),
                 BorderBrush = Brushes.Black,
@@ -70,10 +70,10 @@ namespace ProjectTemplate_v2.ViewModels
                 Pushpin pin = new Pushpin
                 {
                     Location = new Location(sensor.Latitude, sensor.Longitude),
-                    Name = sensor.Name,
+                    Name = sensor.Name.ToString(),
                     ToolTip = sensor.Description
                 };
-                Locations.Add(pin);
+                //Locations.Add(pin);
 
                 MapWithMarkers.Children.Add(pin);
             }
@@ -100,21 +100,5 @@ namespace ProjectTemplate_v2.ViewModels
                 RaisePropertyChanged("Locations");
             }
         }
-
-
-        //private void SetAllPushpinLocations(ref Sensors sensors, ObservableCollection<Pushpin> Locations, ObservableCollection<PushpinModel> Pushpins)
-        //{
-        //    foreach (var sensor in sensors.List)
-        //    {
-        //        Pushpin temp = new Pushpin
-        //        {
-        //            Location = new Location(sensor.Longitude, sensor.Latitude)
-        //        };
-        //        Locations.Add(temp);
-
-        //        PushpinModel tempp = new PushpinModel(temp.Location, sensor.Name, sensor.Description);
-        //        Pushpins.Add(tempp);
-        //    }
-        //}
     }
 }

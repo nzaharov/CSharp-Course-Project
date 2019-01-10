@@ -83,11 +83,15 @@
     <Compile Include="Models\WindowDoorSensor.cs" />
     <Compile Include="ViewModels\AddSensorViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\EditFormDialogViewModel.cs" />
     <Compile Include="ViewModels\ListViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\MapViewModel.cs" />
     <Compile Include="Views\AddSensorView.xaml.cs">
       <DependentUpon>AddSensorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditFormDialog.xaml.cs">
+      <DependentUpon>EditFormDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ListView.xaml.cs">
       <DependentUpon>ListView.xaml</DependentUpon>
@@ -111,6 +115,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\AddSensorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditFormDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

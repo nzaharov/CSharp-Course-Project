@@ -33,7 +33,9 @@
                 <DataTemplate>
                     <Maps:Pushpin Location="{Binding Location}" Content="{Binding Name}">
                     </Maps:Pushpin>
-                    --><!--Implement Infobox logic--><!--
+                    -->
+    <!--Implement Infobox logic-->
+    <!--
                 </DataTemplate>
             </Maps:MapItemsControl.ItemTemplate>
         </Maps:MapItemsControl>
@@ -50,14 +52,4 @@
                Margin="10,80,300,30"
                BorderThickness="10"
                BorderBrush="Black">
-    </m:Map>-->
-<!--<m:Map DataContext="{Binding MapWithSensors}"
-           ZoomLevel="8" 
-           Mode="AerialWithLabels" 
-           CredentialsProvider="Arlj7m-YopkSpqjw8gdI2PHqnd8tulYdY91G_h8qZ42jmUOPjjqFRnO7iMpk9TuS" 
-           Center="{Binding DevPosition}"
-           Margin="10,80,300,30"
-           BorderThickness="10"
-           BorderBrush="Black">
-        <m:Pushpin.Map
     </m:Map>-->

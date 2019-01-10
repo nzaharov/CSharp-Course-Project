@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -25,19 +24,6 @@ namespace ProjectTemplate_v2
         {
             List = new ObservableCollection<Sensor>();
         }
-
-        //public IEnumerator<Sensor> GetEnumerator()
-        //{
-        //    foreach (var sensor in List)
-        //    {
-        //        yield return sensor;
-        //    }
-        //}
-
-        //IEnumerator IEnumerable.GetEnumerator()
-        //{
-        //    return GetEnumerator();
-        //}
 
         //public ICollectionView FollowedList
         //{

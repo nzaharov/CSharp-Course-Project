@@ -28,6 +28,11 @@ namespace ProjectTemplate_v2
 
         }
 
+        public Sensor(Sensor sensor):this(sensor.Name,sensor.Url,sensor.Description,sensor.Latitude,sensor.Longitude,sensor.Followed)
+        {
+
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged(string propName)
         {

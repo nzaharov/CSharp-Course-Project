@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Windows;
 using System.Windows.Data;
-using System.Windows.Input;
 using System.Windows.Media;
 using Telerik.Windows.Controls;
 using Telerik.Windows.Controls.Gauge;
@@ -12,24 +10,24 @@ namespace ProjectTemplate_v2.ViewModels
 {
     public class MainViewModel : BaseViewModel
     {
-        public ICommand AutoTileCommand { get; private set; }
+        //public ICommand AutoTileCommand { get; private set; }
         public ObservableCollection<Sensor> FollowedList { get; set; }
 
-        public MainViewModel(ref Sensors sensors)
+        public MainViewModel(Sensors sensors)
         {
-            AutoTileCommand = new DelegateCommand(AutoGenerateTile);
             this.sensors = sensors;
-            GetFollowedList(ref sensors);
+            GetFollowedList(sensors);
+            //AutoTileCommand = new DelegateCommand(AutoGenerateTile);
         }
 
-        private void GetFollowedList( ref Sensors sensors)
+        private void GetFollowedList(Sensors sensors)
         {
             FollowedList = new ObservableCollection<Sensor>(sensors.List);
             ICollectionView source = CollectionViewSource.GetDefaultView(FollowedList);
             source.Filter = item => ((Sensor)item).Followed;
         }
 
-        public void AutoGenerateTile(object e)
+        public static void AutoGenerateTile(object e)
         {
             Sensor sensor = ((AutoGeneratingTileEventArgs)e).Tile.Content as Sensor;
 

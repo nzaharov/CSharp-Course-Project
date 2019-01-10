@@ -1,34 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Sensors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Sensors>
-    <Sensor xsi:type="HumiditySensor">
-      <Followed>true</Followed>
-      <Longitude>0</Longitude>
-      <Latitude>0</Latitude>
-      <Url>ddfgd</Url>
-      <Description>dfhfg</Description>
-      <Name>dfgd</Name>
-      <MaxValue>20</MaxValue>
-      <MinValue>0</MinValue>
-    </Sensor>
-    <Sensor xsi:type="HumiditySensor">
-      <Followed>true</Followed>
-      <Longitude>25</Longitude>
-      <Latitude>42</Latitude>
-      <Url>www.www.com</Url>
-      <Description>Test</Description>
-      <Name>Alabala</Name>
-      <MaxValue>90</MaxValue>
-      <MinValue>20</MinValue>
+    <Sensor xsi:type="WindowDoorSensor">
+      <Followed>false</Followed>
+      <Longitude>12320</Longitude>
+      <Latitude>1231</Latitude>
+      <Url>asd</Url>
+      <Description>asdadas</Description>
+      <Name>Senzor2</Name>
+      <Opened>true</Opened>
     </Sensor>
     <Sensor xsi:type="WindowDoorSensor">
       <Followed>true</Followed>
-      <Longitude>23.319941</Longitude>
-      <Latitude>42.698334</Latitude>
-      <Url>www.www.www.com</Url>
-      <Description>jdhosnkjlnlkjnmlkdsnmlkdfds</Description>
-      <Name>Test</Name>
+      <Longitude>120</Longitude>
+      <Latitude>12</Latitude>
+      <Url>azsda</Url>
+      <Description>asea</Description>
+      <Name>Senzor3</Name>
       <Opened>true</Opened>
+    </Sensor>
+    <Sensor xsi:type="HumiditySensor">
+      <Followed>true</Followed>
+      <Longitude>32</Longitude>
+      <Latitude>2</Latitude>
+      <Url>asda</Url>
+      <Description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum rutrum enim ac pellentesque. Nunc imperdiet odio non quam elementum, et iaculis nibh rutrum. Vivamus sodales est in urna aliquet convallis vitae a massa. Fusce vehicula nunc sapien. Curabitur non tempus velit, id fringilla sapien. Donec risus diam, accumsan a ex sed, porttitor rutrum tortor. Aenean eget bibendum libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum rutrum enim ac pellentesque. Nunc imperdiet odio non quam elementum, et iaculis nibh rutrum. Vivamus sodales est in urna aliquet convallis vitae a massa. Fusce vehicula nunc sapien. Curabitur non tempus velit, id fringilla sapien. Donec risus diam, accumsan a ex sed, porttitor rutrum tortor. Aenean eget bibendum libero. </Description>
+      <Name>Senzor4</Name>
+      <MaxValue>99</MaxValue>
+      <MinValue>52</MinValue>
+    </Sensor>
+    <Sensor xsi:type="WindowDoorSensor">
+      <Followed>true</Followed>
+      <Longitude>0</Longitude>
+      <Latitude>0</Latitude>
+      <Url>ASdad</Url>
+      <Description>asdad</Description>
+      <Name>Door1</Name>
+      <Opened>true</Opened>
+    </Sensor>
+    <Sensor xsi:type="WindowDoorSensor">
+      <Followed>true</Followed>
+      <Longitude>30</Longitude>
+      <Latitude>20</Latitude>
+      <Url>aeaaseas</Url>
+      <Description>asdasd</Description>
+      <Name>Window1</Name>
+      <Opened>false</Opened>
     </Sensor>
   </Sensors>
 </Sensors>

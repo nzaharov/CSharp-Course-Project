@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using MaterialDesignThemes.Wpf;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Input;
 using Telerik.Windows.Controls;
@@ -10,11 +11,12 @@ namespace ProjectTemplate_v2.ViewModels
         private string selectedItem;
         private string unit;
         private bool opened;
-        private bool tracking=true;
+        private bool tracking = true;
         private Visibility visibility1;
         private Visibility visibility2;
 
-        public ObservableCollection<string> Types { get; private set; }
+        public List<string> Types { get; private set; } =
+            new List<string>() { "Temperature", "Humidity", "Electricity Consumption", "Noise", "Window/Door" };
         public string Name { get; set; }
         public string Url { get; set; }
         public string Description { get; set; }
@@ -23,14 +25,15 @@ namespace ProjectTemplate_v2.ViewModels
         public decimal MinValue { get; set; }
         public decimal MaxValue { get; set; }
         public ICommand SubmitCommand { get; private set; }
+        public SnackbarMessageQueue SensorAdded { get; set; }
 
 
-        public AddSensorViewModel(ref Sensors sensors)
+        public AddSensorViewModel(Sensors sensors)
         {
-            Types = new ObservableCollection<string>() { "Temperature", "Humidity", "Electricity Consumption", "Noise", "Window/Door" };
             Visibility1 = Visibility.Visible;
             Visibility2 = Visibility.Collapsed;
             this.sensors = sensors;
+            SensorAdded = new SnackbarMessageQueue();
             SubmitCommand = new DelegateCommand(Submit); //TODO: CanExecuteCommand
         }
 
@@ -41,7 +44,7 @@ namespace ProjectTemplate_v2.ViewModels
             switch (SelectedItem)
             {
                 case "Temperature":
-                    sensor = new TemperatureSensor(Name,Url,Description,Latitude,Longitude,Tracking,MinValue,MaxValue);
+                    sensor = new TemperatureSensor(Name, Url, Description, Latitude, Longitude, Tracking, MinValue, MaxValue);
                     break;
                 case "Humidity":
                     sensor = new HumiditySensor(Name, Url, Description, Latitude, Longitude, Tracking, MinValue, MaxValue);
@@ -62,6 +65,7 @@ namespace ProjectTemplate_v2.ViewModels
 
             sensors.List.Add(sensor);
             UpdateXml(sensors);
+            SensorAdded.Enqueue("Sensor added successfully");
         }
 
         public bool Opened
