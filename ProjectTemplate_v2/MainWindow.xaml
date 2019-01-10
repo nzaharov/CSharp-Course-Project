@@ -10,13 +10,14 @@
         mc:Ignorable="d"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{StaticResource MaterialDesignFont}"
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
-        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
-        Title="Project" Height="640" Width="1024">
+        Title="Project" 
+        Height="640" Width="1024">
 
     <Window.Resources>
-        <DataTemplate x:Name="mainViewTemplate" DataType="{x:Type viewmodels:MainViewModel}">
+        <DataTemplate x:Name="mainViewTemplate" DataType="{x:Type viewmodels:DashViewModel}">
             <views:MainView DataContext="{Binding}"/>
         </DataTemplate>
         <DataTemplate x:Name="addSensorViewTemplate" DataType="{x:Type viewmodels:AddSensorViewModel}">
@@ -59,16 +60,21 @@
                     </ListBox>
                 </DockPanel>
             </materialDesign:DrawerHost.LeftDrawerContent>
-            <Canvas>
-                <materialDesign:ColorZone Mode="PrimaryMid" Width="1016" HorizontalContentAlignment="Left"
-                                      materialDesign:ShadowAssist.ShadowDepth="Depth1">
-                    <ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}" IsChecked="False"
-                      Margin="16"
-                      x:Name="MenuToggleButton"/>
+            <DockPanel>
+                <materialDesign:ColorZone Mode="PrimaryMid"
+                                          materialDesign:ShadowAssist.ShadowDepth="Depth1"
+                                          Padding="16" DockPanel.Dock="Top">
+                    <DockPanel>
+                        <ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}" IsChecked="False"                     
+                                      x:Name="MenuToggleButton"
+                                      Grid.Column="0"/>
+                        <TextBlock Text="smartDormitory" 
+                                   HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="30"/>
+                    </DockPanel>
                 </materialDesign:ColorZone>
 
-                <ContentControl Width="1016" Height="542" Canvas.Top="67" Content="{Binding}"/>
-            </Canvas>
+                <ContentControl Content="{Binding}"/>
+            </DockPanel>
         </materialDesign:DrawerHost>
     </materialDesign:DialogHost>
 </Window>

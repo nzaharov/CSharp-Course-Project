@@ -92,11 +92,6 @@ D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\bin\Debug\Project
 D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\bin\Debug\Telerik.Windows.Controls.DataVisualization.dll
 D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\bin\Debug\Telerik.Windows.Controls.dll
 D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\bin\Debug\Telerik.Windows.Data.dll
-D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\bin\Debug\MaterialDesignColors.pdb
-D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\bin\Debug\MaterialDesignThemes.Wpf.pdb
-D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\bin\Debug\MaterialDesignThemes.Wpf.xml
-D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\bin\Debug\Microsoft.Expression.Interactions.xml
-D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\bin\Debug\System.Windows.Interactivity.xml
 D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\bin\Debug\Telerik.Windows.Controls.xml
 D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\bin\Debug\Telerik.Windows.Controls.DataVisualization.xml
 D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\bin\Debug\Telerik.Windows.Data.xml
@@ -110,7 +105,6 @@ D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\Project
 D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\MainWindow.g.cs
 D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\Views\AddSensorView.g.cs
 D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\Views\ListView.g.cs
-D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\Views\MainView.g.cs
 D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\Views\MapView.g.cs
 D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\App.g.cs
 D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\GeneratedInternalTypeHelper.g.cs
@@ -120,7 +114,6 @@ D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\App.bam
 D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\MainWindow.baml
 D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\Views\AddSensorView.baml
 D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\Views\ListView.baml
-D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\Views\MainView.baml
 D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\Views\MapView.baml
 D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\ProjectTemplate_v2.g.resources
 D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\ProjectTemplate_v2.Properties.Resources.resources
@@ -131,3 +124,10 @@ D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\Project
 D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\ProjectTemplate_v2.pdb
 D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\Views\EditFormDialog.g.cs
 D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\Views\EditFormDialog.baml
+D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\Views\DashVIew.g.cs
+D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\Views\DashVIew.baml
+D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\bin\Debug\Newtonsoft.Json.dll
+D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\bin\Debug\System.Net.Http.Formatting.dll
+D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\bin\Debug\Newtonsoft.Json.xml
+D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\bin\Debug\System.Net.Http.Formatting.xml
+D:\source\projectrepo\CSharp-Course-Project\ProjectTemplate_v2\bin\Debug\Newtonsoft.Json.pdb

@@ -17,7 +17,7 @@ namespace ProjectTemplate_v2
         {
             InitializeComponent();
             InitializeList();
-            DataContext = new MainViewModel(sensors);
+            DataContext = new DashViewModel(sensors);
         }
 
         private void InitializeList()
@@ -44,7 +44,7 @@ namespace ProjectTemplate_v2
 
         private void BtnToMain_PreviewMouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            DataContext = new MainViewModel(sensors);
+            DataContext = new DashViewModel(sensors);
             MenuToggleButton.IsChecked = false;
         }
 

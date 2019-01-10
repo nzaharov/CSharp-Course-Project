@@ -9,7 +9,6 @@ namespace ProjectTemplate_v2.ViewModels
 {
     public class ListViewModel : BaseViewModel
     {
-        public ObservableCollection<Sensor> List { get; set; }
         public ICommand RemoveCommand { get; private set; }
         public ICommand FollowCommand { get; private set; }
         public ICommand EditCommand { get; private set; }
@@ -17,6 +16,7 @@ namespace ProjectTemplate_v2.ViewModels
         private Sensor selected;
         private string followButtonContent;
         private PackIconKind iconKind;
+        private ObservableCollection<Sensor> list;
 
 
         public ListViewModel(Sensors sensors)
@@ -26,7 +26,7 @@ namespace ProjectTemplate_v2.ViewModels
             List = sensors.List;
             RemoveCommand = new DelegateCommand(RemoveSensor);
             FollowCommand = new DelegateCommand(ChangeFollow);
-            EditCommand = new DelegateCommand(ExecuteEditDialog);
+            EditCommand = new DelegateCommand(ExecuteEditDialog);           
         }
 
         private async void ExecuteEditDialog(object obj)
@@ -52,6 +52,7 @@ namespace ProjectTemplate_v2.ViewModels
                 .Where(item => Selected == item)
                 .Select(item => item.Followed = !item.Followed).ToList();
 
+            FollowButtonContent = !Selected.Followed ? "Follow" : "Unfollow";
             UpdateXml(sensors);
         }
 
@@ -78,12 +79,23 @@ namespace ProjectTemplate_v2.ViewModels
                         else
                             IconKind = PackIconKind.DoorOpen;
                     }
-
                     RaisePropertyChanged("Selected");
                 }
             }
         }
 
+        public ObservableCollection<Sensor> List
+        {
+            get { return list; }
+            set
+            {
+                if (list != value)
+                {
+                    list = value;
+                    RaisePropertyChanged("List");
+                }
+            }
+        }
 
         public PackIconKind IconKind
         {

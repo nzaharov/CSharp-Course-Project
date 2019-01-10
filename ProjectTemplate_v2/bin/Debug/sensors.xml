@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Sensors xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Sensors>
-    <Sensor xsi:type="WindowDoorSensor">
-      <Followed>false</Followed>
-      <Longitude>12320</Longitude>
-      <Latitude>1231</Latitude>
-      <Url>asd</Url>
-      <Description>asdadas</Description>
-      <Name>Senzor2</Name>
-      <Opened>true</Opened>
-    </Sensor>
-    <Sensor xsi:type="WindowDoorSensor">
-      <Followed>true</Followed>
-      <Longitude>120</Longitude>
-      <Latitude>12</Latitude>
-      <Url>azsda</Url>
-      <Description>asea</Description>
-      <Name>Senzor3</Name>
-      <Opened>true</Opened>
-    </Sensor>
     <Sensor xsi:type="HumiditySensor">
       <Followed>false</Followed>
       <Longitude>0</Longitude>
@@ -45,37 +27,7 @@
       <Latitude>0</Latitude>
       <Url>ase</Url>
       <Description>ss</Description>
-      <Name>1</Name>
-      <MaxValue>0</MaxValue>
-      <MinValue>0</MinValue>
-    </Sensor>
-    <Sensor xsi:type="TemperatureSensor">
-      <Followed>true</Followed>
-      <Longitude>0</Longitude>
-      <Latitude>0</Latitude>
-      <Url>ase</Url>
-      <Description>ss</Description>
       <Name>2</Name>
-      <MaxValue>0</MaxValue>
-      <MinValue>0</MinValue>
-    </Sensor>
-    <Sensor xsi:type="TemperatureSensor">
-      <Followed>true</Followed>
-      <Longitude>0</Longitude>
-      <Latitude>0</Latitude>
-      <Url>ase</Url>
-      <Description>ss</Description>
-      <Name>4</Name>
-      <MaxValue>0</MaxValue>
-      <MinValue>0</MinValue>
-    </Sensor>
-    <Sensor xsi:type="TemperatureSensor">
-      <Followed>true</Followed>
-      <Longitude>0</Longitude>
-      <Latitude>0</Latitude>
-      <Url>ase</Url>
-      <Description>ss</Description>
-      <Name>6</Name>
       <MaxValue>0</MaxValue>
       <MinValue>0</MinValue>
     </Sensor>
@@ -93,8 +45,8 @@
       <Followed>true</Followed>
       <Longitude>32</Longitude>
       <Latitude>2</Latitude>
-      <Url>asda</Url>
-      <Description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum rutrum enim ac pellentesque. Nunc imperdiet odio non quam elementum, et iaculis nibh rutrum. Vivamus sodales est in urna aliquet convallis vitae a massa. Fusce vehicula nunc sapien. Curabitur non tempus velit, id fringilla sapien. Donec risus diam, accumsan a ex sed, porttitor rutrum tortor. Aenean eget bibendum libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum rutrum enim ac pellentesque. Nunc imperdiet odio non quam elementum, et iaculis nibh rutrum. Vivamus sodales est in urna aliquet convallis vitae a massa. Fusce vehicula nunc sapien. Curabitur non tempus velit, id fringilla sapien. Donec risus diam, accumsan a ex sed, porttitor rutrum tortor. Aenean eget bibendum libero. </Description>
+      <Url>https://localhost:44330/sensors/</Url>
+      <Description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum rutrum enim ac pellentesque. Nunc imperdiet odio non quam elementum, et iaculis nibh rutrum. Vivamus sodales est in urna aliquet convallis vitae a massa. Fusce vehicula nunc sapien. Curabitur non tempus velit, id fringilla sapien. Donec risus diam, accumsan a ex sed, porttitor rutrum tortor. Aenean eget bibendum libero. </Description>
       <Name>Senzor4</Name>
       <MaxValue>99</MaxValue>
       <MinValue>52</MinValue>
@@ -103,34 +55,24 @@
       <Followed>true</Followed>
       <Longitude>0</Longitude>
       <Latitude>0</Latitude>
-      <Url>qwe</Url>
+      <Url>https://localhost:44330/sensors/</Url>
       <Description>asdad</Description>
       <Name>wrw</Name>
       <MaxValue>53</MaxValue>
-      <MinValue>2</MinValue>
+      <MinValue>40</MinValue>
     </Sensor>
     <Sensor xsi:type="HumiditySensor">
       <Followed>true</Followed>
       <Longitude>0</Longitude>
       <Latitude>0</Latitude>
-      <Url>ewr</Url>
+      <Url>https://localhost:44330/sensors/</Url>
       <Description>asdada</Description>
       <Name>er</Name>
       <MaxValue>30</MaxValue>
       <MinValue>20</MinValue>
     </Sensor>
-    <Sensor xsi:type="TemperatureSensor">
-      <Followed>true</Followed>
-      <Longitude>0</Longitude>
-      <Latitude>0</Latitude>
-      <Url>sdrs</Url>
-      <Description>sdfsf</Description>
-      <Name>dr</Name>
-      <MaxValue>30</MaxValue>
-      <MinValue>0</MinValue>
-    </Sensor>
     <Sensor xsi:type="WindowDoorSensor">
-      <Followed>true</Followed>
+      <Followed>false</Followed>
       <Longitude>0</Longitude>
       <Latitude>0</Latitude>
       <Url>ASdad</Url>
@@ -139,7 +81,7 @@
       <Opened>true</Opened>
     </Sensor>
     <Sensor xsi:type="WindowDoorSensor">
-      <Followed>true</Followed>
+      <Followed>false</Followed>
       <Longitude>30</Longitude>
       <Latitude>20</Latitude>
       <Url>aeaaseas</Url>
@@ -148,7 +90,7 @@
       <Opened>false</Opened>
     </Sensor>
     <Sensor xsi:type="PowerConsumptionSensor">
-      <Followed>true</Followed>
+      <Followed>false</Followed>
       <Longitude>25.443</Longitude>
       <Latitude>42</Latitude>
       <Url>adadsda</Url>
@@ -156,6 +98,16 @@
       <Name>Power sensor 1</Name>
       <MaxValue>457</MaxValue>
       <MinValue>350</MinValue>
+    </Sensor>
+    <Sensor xsi:type="HumiditySensor">
+      <Followed>true</Followed>
+      <Longitude>0</Longitude>
+      <Latitude>0</Latitude>
+      <Url>https://localhost:44330/sensors</Url>
+      <Description>asdadsd</Description>
+      <Name>warw</Name>
+      <MaxValue>22</MaxValue>
+      <MinValue>2</MinValue>
     </Sensor>
   </Sensors>
 </Sensors>

@@ -6,7 +6,8 @@
              xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="542" d:DesignWidth="1016">
+             d:DesignHeight="542" d:DesignWidth="1016"
+             Padding="20">
 
     <UserControl.Triggers>
         <EventTrigger RoutedEvent="Loaded">
@@ -20,24 +21,9 @@
         </EventTrigger>
     </UserControl.Triggers>
 
-        <Canvas>
-            <materialDesign:Card DataContext="{Binding Selected}" 
-                                 Canvas.Right="24" Canvas.Top="16" 
-                                 MinHeight="300" Width="300" MaxHeight="500"
-                                 Padding="10">
-                <StackPanel>
-                    <WrapPanel Margin="0 0 0 5">
-                        <materialDesign:PackIcon Kind="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type UserControl}},Path=DataContext.IconKind}"
-                                                 Width="25" Height="25" Opacity=".80"/>
-                        <TextBlock Text="{Binding Name}" FontSize="20" TextWrapping="Wrap"/>
-                    </WrapPanel>
-                    <Separator Style="{StaticResource MaterialDesignDarkSeparator}" />
-                    <TextBlock Text="{Binding Description}" FontWeight="Light" TextWrapping="Wrap" />
-                </StackPanel>
-            </materialDesign:Card>
-
-            <ListBox x:Name="lbListBox" ItemsSource="{Binding List}" SelectedItem="{Binding Selected}" ScrollViewer.VerticalScrollBarVisibility="Hidden"
-                     Width="600" Height="500" Canvas.Left="32" Canvas.Bottom="26"
+    <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center"> 
+        <ListBox x:Name="lbListBox" ItemsSource="{Binding List}" SelectedItem="{Binding Selected}" ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                     MinWidth="600" MinHeight="500"
                      FontSize="18">
 
                 <ListBox.Resources>
@@ -76,7 +62,7 @@
                     </DataTemplate>
 
                     <Style TargetType="{x:Type ListBoxItem}"
-                       BasedOn="{StaticResource {x:Type ListBoxItem}}">
+                           BasedOn="{StaticResource {x:Type ListBoxItem}}">
                         <EventSetter Event="PreviewMouseDown" Handler="ListBoxItem_PreviewMouseDown"/>
                         <Setter Property="ContentTemplate" Value="{StaticResource ListItem}"/>
                         <Style.Triggers>
@@ -87,5 +73,20 @@
                     </Style>
                 </ListBox.Resources>
             </ListBox>
-        </Canvas>
+
+        <materialDesign:Card DataContext="{Binding Selected}" 
+                                 Margin="10 0 0 0"
+                                 MinHeight="300" Width="300" MaxHeight="500"
+                                 Padding="10">
+            <StackPanel>
+                <WrapPanel Margin="0 0 0 5">
+                    <materialDesign:PackIcon Kind="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type UserControl}},Path=DataContext.IconKind}"
+                                                 Width="25" Height="25" Opacity=".80"/>
+                    <TextBlock Text="{Binding Name}" FontSize="20" TextWrapping="Wrap"/>
+                </WrapPanel>
+                <Separator Style="{StaticResource MaterialDesignDarkSeparator}" />
+                <TextBlock Text="{Binding Description}" FontWeight="Light" TextWrapping="Wrap"/>
+            </StackPanel>
+        </materialDesign:Card>
+    </WrapPanel>
 </UserControl>
