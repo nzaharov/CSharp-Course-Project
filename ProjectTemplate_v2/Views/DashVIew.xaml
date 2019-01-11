@@ -24,7 +24,7 @@
     <Canvas>
         <WrapPanel Canvas.Top="-5" Canvas.Right="0">
             <TextBlock Text="C# Project 2018" Foreground="Teal" VerticalAlignment="Center" FontSize="30"/>
-            <Image Height="125" Width="222" Source="/logo.png" Stretch="Fill" />
+            <Image Height="125" Width="222" Source="/Resources/logo.png" Stretch="Fill" />
         </WrapPanel>
 
         <telerik:RadTileList ItemsSource="{Binding FollowedList}"
