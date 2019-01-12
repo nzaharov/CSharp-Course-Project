@@ -133,3 +133,5 @@ C:\Users\Lenovo\source\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\Views\
 C:\Users\Lenovo\source\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\Views\DashVIew.g.cs
 C:\Users\Lenovo\source\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\Views\EditFormDialog.baml
 C:\Users\Lenovo\source\CSharp-Course-Project\ProjectTemplate_v2\obj\Debug\Views\DashVIew.baml
+C:\Users\Lenovo\source\CSharp-Course-Project\ProjectTemplate_v2\bin\Debug\Microsoft.Maps.MapControl.WPF.dll
+C:\Users\Lenovo\source\CSharp-Course-Project\ProjectTemplate_v2\bin\Debug\Microsoft.Maps.MapControl.WPF.xml
