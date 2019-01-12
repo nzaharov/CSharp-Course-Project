@@ -23,13 +23,17 @@
 
     <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center"> 
         <ListBox x:Name="lbListBox" ItemsSource="{Binding List}" SelectedItem="{Binding Selected}" ScrollViewer.VerticalScrollBarVisibility="Hidden"
-                     MinWidth="600" MinHeight="500"
-                     FontSize="18">
+                     MaxWidth="600" MaxHeight="500"
+                     FontSize="18"
+                 Margin="0 0 0 5">
 
                 <ListBox.Resources>
                     <DataTemplate x:Key="ListItem">
+                    <WrapPanel>
                         <Label x:Name="lblLabel" Content="{Binding Name}" Width="540" Foreground="#484848"/>
-                    </DataTemplate>
+                        <TextBlock Width="40"/>
+                    </WrapPanel>
+                </DataTemplate>
                     <DataTemplate x:Key="SelectedItem">
                         <WrapPanel>
                             <Label x:Name="lblLabel" Content="{Binding Name}" Width="540" Foreground="#212121"/>
