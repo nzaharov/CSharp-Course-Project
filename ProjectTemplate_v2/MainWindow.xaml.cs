@@ -62,7 +62,7 @@ namespace ProjectTemplate_v2
 
         private void BtnToMap_PreviewMouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            DataContext = new MapViewModel();
+            DataContext = new MapViewModel(ref sensors);
             MenuToggleButton.IsChecked = false;
         }
     }

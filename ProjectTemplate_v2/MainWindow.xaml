@@ -13,6 +13,7 @@
         FontFamily="{StaticResource MaterialDesignFont}"
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
+        Icon=".\Resources\icon.png"
         Title="Project" 
         Height="640" Width="1024">
 
