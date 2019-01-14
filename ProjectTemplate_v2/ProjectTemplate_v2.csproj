@@ -81,6 +81,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="HttpService.cs" />
+    <Compile Include="Resources\Gauges\HumidityGaugeCtrl.xaml.cs">
+      <DependentUpon>HumidityGaugeCtrl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\HumiditySensor.cs" />
     <Compile Include="Models\NoiseSensor.cs" />
     <Compile Include="Models\PowerConsumptionSensor.cs" />
@@ -122,6 +125,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Resources\Gauges\HumidityGaugeCtrl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AddSensorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

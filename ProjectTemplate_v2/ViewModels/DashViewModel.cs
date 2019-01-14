@@ -1,14 +1,15 @@
 ﻿using ProjectTemplate_v2.Models;
+using ProjectTemplate_v2.Models.Gauges;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
 using Telerik.Windows.Controls;
-using Telerik.Windows.Controls.Gauge;
 
 namespace ProjectTemplate_v2.ViewModels
 {
@@ -21,7 +22,7 @@ namespace ProjectTemplate_v2.ViewModels
         {
             this.sensors = sensors;
             GetFollowedList(sensors);
-            HttpService.InitializeClient();
+            //HttpService.InitializeClient();
             //AutoTileCommand = new DelegateCommand(AutoGenerateTile);
         }
 
@@ -43,41 +44,41 @@ namespace ProjectTemplate_v2.ViewModels
 
             if (sensor is HumiditySensor)
             {
-                double val = 0; // HttpService.GetProductValueAsync(url).Result;
+                //double val = HttpService.GetProductValueAsync(url).Result;
 
-                RadialScale scale = new RadialScale
-                {
-                    Min = 0,
-                    Max = 100,
-                    ToolTip = sensor.Name,
-                    FontSize = 11
-                };
+                //RadialScale scale = new RadialScale
+                //{
+                //    Min = 0,
+                //    Max = 100,
+                //    ToolTip = sensor.Name,
+                //    FontSize = 11
+                //};
 
-                Needle needle = new Needle
-                {
-                    Value = val
-                };
-                scale.Indicators.Add(needle);
-
-
-                Marker min = new Marker
-                {
-                    Value = Convert.ToDouble(((HumiditySensor)sensor).MinValue)
-                };
-
-                Marker max = new Marker
-                {
-                    Value = Convert.ToDouble(((HumiditySensor)sensor).MaxValue)
-                };
+                //Needle needle = new Needle
+                //{
+                //    Value = val
+                //};
+                //scale.Indicators.Add(needle);
 
 
-                scale.Indicators.Add(new Pinpoint());
-                scale.Indicators.Add(min);
-                scale.Indicators.Add(max);
-                RadRadialGauge rad = new RadRadialGauge();
-                rad.Items.Add(scale);
-                StyleManager.SetTheme(rad, new MaterialTheme());
-                ((AutoGeneratingTileEventArgs)e).Tile.Content = rad;
+                //Marker min = new Marker
+                //{
+                //    Value = Convert.ToDouble(((HumiditySensor)sensor).MinValue)
+                //};
+
+                //Marker max = new Marker
+                //{
+                //    Value = Convert.ToDouble(((HumiditySensor)sensor).MaxValue)
+                //};
+
+
+                //scale.Indicators.Add(new Pinpoint());
+                //scale.Indicators.Add(min);
+                //scale.Indicators.Add(max);
+                //RadRadialGauge rad = new RadRadialGauge();
+                //rad.Items.Add(scale);
+                //StyleManager.SetTheme(rad, new MaterialTheme());
+                ((AutoGeneratingTileEventArgs)e).Tile.Content = new HumidityGaugeCtrl((HumiditySensor)sensor);
 
             }
         }

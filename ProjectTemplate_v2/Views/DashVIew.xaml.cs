@@ -16,11 +16,11 @@ namespace ProjectTemplate_v2.Views
 
         private void RadTileList_AutoGeneratingTile(object sender, Telerik.Windows.Controls.AutoGeneratingTileEventArgs e)
         {
-            //Dispatcher.BeginInvoke(new Action(() =>
-            //    DashViewModel.AutoGenerateTile(e)
-            //));
+            Dispatcher.BeginInvoke(new Action(() =>
+                DashViewModel.AutoGenerateTile(e)
+            ));
 
-            DashViewModel.AutoGenerateTile(e);
+            //DashViewModel.AutoGenerateTile(e);
         }
     }
 }

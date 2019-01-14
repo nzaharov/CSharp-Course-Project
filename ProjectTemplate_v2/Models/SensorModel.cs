@@ -8,6 +8,10 @@ namespace ProjectTemplate_v2.Models
 {
     public class SensorModel
     {
-        public double Value { get; set; }
+        public string SensorId { get; set; }
+        public string Tag { get; set; }
+        public string Description { get; set; }
+        public int MinPollingIntervalInSeconds { get; set; }
+        public string MeasureType { get; set; }
     }
 }
