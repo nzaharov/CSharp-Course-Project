@@ -22,6 +22,7 @@ namespace ProjectTemplate_v2.Models.Gauges
     public partial class HumidityGaugeCtrl : UserControl
     {
         private static Random rand;
+        HumiditySensor sensor;
 
         public HumidityGaugeCtrl(HumiditySensor sensor)
         {
@@ -29,6 +30,7 @@ namespace ProjectTemplate_v2.Models.Gauges
             minMarker.Value=(double)sensor.MinValue;
             maxMarker.Value = (double)sensor.MaxValue;
             humidityGauge.ToolTip = sensor.Name;
+            this.sensor = sensor;
 
             rand = new Random();
             DispatcherTimer timer = new DispatcherTimer
@@ -43,6 +45,12 @@ namespace ProjectTemplate_v2.Models.Gauges
         void Timer_Tick(object sender,EventArgs e)
         {
             Needle.Value = rand.Next(0, 101);
+            if (Needle.Value >(double) sensor.MaxValue || Needle.Value < (double)sensor.MinValue)
+            {
+                humidityGauge.Background = new SolidColorBrush(Colors.IndianRed);
+            }
+            else
+                humidityGauge.Background = new SolidColorBrush(Colors.Transparent);
         }
     }
 }
