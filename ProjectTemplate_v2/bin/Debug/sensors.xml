@@ -32,7 +32,7 @@
       <MinValue>0</MinValue>
     </Sensor>
     <Sensor xsi:type="HumiditySensor">
-      <Followed>true</Followed>
+      <Followed>false</Followed>
       <Longitude>0</Longitude>
       <Latitude>0</Latitude>
       <Url>asd</Url>
@@ -90,7 +90,7 @@
       <MinValue>350</MinValue>
     </Sensor>
     <Sensor xsi:type="HumiditySensor">
-      <Followed>true</Followed>
+      <Followed>false</Followed>
       <Longitude>0</Longitude>
       <Latitude>0</Latitude>
       <Url>asdsda</Url>

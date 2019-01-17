@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Linq;
 using System.Windows.Media;
 using Telerik.Windows.Controls;
 
@@ -22,7 +23,7 @@ namespace ProjectTemplate_v2.ViewModels
         {
             this.sensors = sensors;
             GetFollowedList(sensors);
-            //HttpService.InitializeClient();
+            HttpService.InitializeClient();
             //AutoTileCommand = new DelegateCommand(AutoGenerateTile);
         }
 
@@ -40,45 +41,10 @@ namespace ProjectTemplate_v2.ViewModels
             ((AutoGeneratingTileEventArgs)e).Tile.Background = new SolidColorBrush(Colors.Teal);
             ((AutoGeneratingTileEventArgs)e).Tile.TileType = TileType.Single;
 
-            string url = $"{sensor.Url}/{sensor.Name}";
-
             if (sensor is HumiditySensor)
             {
-                //double val = HttpService.GetProductValueAsync(url).Result;
-
-                //RadialScale scale = new RadialScale
-                //{
-                //    Min = 0,
-                //    Max = 100,
-                //    ToolTip = sensor.Name,
-                //    FontSize = 11
-                //};
-
-                //Needle needle = new Needle
-                //{
-                //    Value = val
-                //};
-                //scale.Indicators.Add(needle);
-
-
-                //Marker min = new Marker
-                //{
-                //    Value = Convert.ToDouble(((HumiditySensor)sensor).MinValue)
-                //};
-
-                //Marker max = new Marker
-                //{
-                //    Value = Convert.ToDouble(((HumiditySensor)sensor).MaxValue)
-                //};
-
-
-                //scale.Indicators.Add(new Pinpoint());
-                //scale.Indicators.Add(min);
-                //scale.Indicators.Add(max);
-                //RadRadialGauge rad = new RadRadialGauge();
-                //rad.Items.Add(scale);
-                //StyleManager.SetTheme(rad, new MaterialTheme());
-                ((AutoGeneratingTileEventArgs)e).Tile.Content = new HumidityGaugeCtrl((HumiditySensor)sensor);
+                var model = HttpService.SensorList.First(item => item.Tag == sensor.Name);
+                ((AutoGeneratingTileEventArgs)e).Tile.Content = new HumidityGaugeCtrl((HumiditySensor)sensor,model);
 
             }
         }

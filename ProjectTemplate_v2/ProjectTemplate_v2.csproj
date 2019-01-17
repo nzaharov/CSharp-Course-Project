@@ -81,6 +81,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="HttpService.cs" />
+    <Compile Include="Models\ValueModel.cs" />
     <Compile Include="Resources\Gauges\HumidityGaugeCtrl.xaml.cs">
       <DependentUpon>HumidityGaugeCtrl.xaml</DependentUpon>
     </Compile>
